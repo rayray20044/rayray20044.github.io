@@ -1,0 +1,113 @@
+<svg class="avatar" width="264" height="280" viewBox="0 0 264 280" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <desc>Avataaars</desc>
+    <defs>
+        <circle id="react-path-1" cx="120" cy="120" r="120"></circle>
+        <path id="react-path-2" d="M12,160 C12,226.27417 65.72583,280 132,280 C198.27417,280 252,226.27417 252,160 L264,160 L264,0 L0,0 L0,160 L12,160 Z"></path>
+        <path id="react-path-3" d="M124,144.610951 L124,163 L128,163 C167.764502,163 200,195.235498 200,235 L200,244 L0,244 L0,235 C0,195.235498 32.235498,163 72,163 L76,163 L76,144.610951 C58.7626345,136.422372 46.3722246,119.687011 44.3051388,99.8812385 C38.4803105,99.0577866 34,94.0521096 34,88 L34,74 C34,68.0540074 38.3245733,63.1180731 44,62.1659169 L44,56 C44,25.072054 69.072054,0 100,0 C130.927946,0 156,25.072054 156,56 L156,62.1659169 C161.675427,63.1180731 166,68.0540074 166,74 L166,88 C166,94.0521096 161.51969,99.0577866 155.694861,99.8812385 C153.627775,119.687011 141.237365,136.422372 124,144.610951 Z"></path>
+
+        <!-- soft shadow for the hand -->
+        <filter id="handShadow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur in="SourceAlpha" stdDeviation="2.2"/>
+            <feOffset dx="0" dy="1.5" result="offsetBlur"/>
+            <feComponentTransfer>
+                <feFuncA type="linear" slope="0.35"/>
+            </feComponentTransfer>
+            <feMerge>
+                <feMergeNode in="offsetBlur"/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+    </defs>
+
+    <g id="Avataaar" fill="none" fill-rule="evenodd">
+        <g transform="translate(-825, -1100)">
+            <g transform="translate(825, 1100)">
+
+                <!-- Circle background -->
+                <g transform="translate(12, 40)">
+                    <mask id="react-mask-4" fill="white">
+                        <use xlink:href="#react-path-1"></use>
+                    </mask>
+                    <use fill="#E6E6E6" xlink:href="#react-path-1"></use>
+                    <g mask="url(#react-mask-4)" fill="#4E80EAFF">
+                        <rect x="0" y="0" width="240" height="240"></rect>
+                    </g>
+                </g>
+
+                <!-- Outer frame mask (everything inside is clipped to the shoulders/torso shape) -->
+                <mask id="react-mask-5" fill="white">
+                    <use xlink:href="#react-path-2"></use>
+                </mask>
+                <g mask="url(#react-mask-5)">
+
+                    <!-- Body -->
+                    <g transform="translate(32, 36)">
+                        <mask id="react-mask-6" fill="white">
+                            <use xlink:href="#react-path-3"></use>
+                        </mask>
+                        <use fill="#D0C6AC" xlink:href="#react-path-3"></use>
+                        <g mask="url(#react-mask-6)" fill="#FFDBB4">
+                            <rect x="0" y="0" width="264" height="280"></rect>
+                        </g>
+                        <path d="M156,79 L156,102 C156,132.9 130.9,158 100,158 C69.1,158 44,132.9 44,102 L44,79 L44,94 C44,124.9 69.1,150 100,150 C130.9,150 156,124.9 156,94 L156,79 Z"
+                              fill="#000" fill-opacity="0.1" mask="url(#react-mask-6)"></path>
+                    </g>
+
+                    <!-- Clothing -->
+                    <g transform="translate(0, 170)">
+                        <mask id="react-mask-156" fill="white">
+                            <path d="M165.9,29.3 C202.9,32.3 232,63.3 232,101.1 L232,110 L32,110 L32,101.1 C32,63 61.6,31.8 99,29.2 C99,42.2 114,51.8 132.5,51.8 C151,51.8 166,42.2 166,30.3 C166,29.6 166,29.3 165.9,29.3 Z"/>
+                        </mask>
+                        <rect fill="#3C4F5C" mask="url(#react-mask-156)" x="0" y="0" width="264" height="110"></rect>
+                    </g>
+
+                    <!-- Face -->
+                    <g transform="translate(76, 82)" fill="#000">
+                        <!-- Mouth -->
+                        <g transform="translate(2, 52)">
+                            <path id="Mouth" fill-opacity="0.7" d="M35.1,15.1 C36.1,24.6 44.2,32 54,32 C63.8,32 71.9,24.6 72.9,15 C72.9,14.3 72.1,13 71,13 C56.1,13 44.7,13 37.1,13 C36,13 35,14.2 35.1,15.1 Z"></path>
+                        </g>
+
+                        <!-- Nose -->
+                        <g transform="translate(28, 40)" fill-opacity="0.16">
+                            <path d="M16,8 C16,12.4 21.4,16 28,16 C34.6,16 40,12.4 40,8"></path>
+                        </g>
+
+                        <!-- Eyes (animated via external CSS) -->
+                        <g transform="translate(0, 8)" fill-opacity="0.6">
+                            <path class="eye" d="M16.1,22.4 C18,18.6 22.2,16 27,16 C31.8,16 36,18.6 37.8,22.4 C38.4,23.5 37.6,24.4 36.8,23.8 C34.3,21.7 30.9,20.3 27,20.3 C23.3,20.3 19.9,21.6 17.4,23.6 C16.5,24.3 15.6,23.6 16.1,22.4 Z"></path>
+                            <path class="eye" d="M74.1,22.4 C76,18.6 80.2,16 85,16 C89.8,16 94,18.6 95.8,22.4 C96.4,23.5 95.6,24.4 94.8,23.8 C92.3,21.7 88.9,20.3 85,20.3 C81.3,20.3 77.9,21.6 75.4,23.6 C74.5,24.3 73.6,23.6 74.1,22.4 Z"></path>
+                        </g>
+                    </g>
+
+                    <!-- Head/Hair -->
+                    <g class="head">
+                        <g transform="translate(58, 18)">
+                            <path fill="#944F23" d="M133.5,81.3 C137.4,83.3 140,87.3 140,92 L140,105
+                 C140,111 135.6,116 129.8,116.9
+                 C128,137.1 115.5,154.3 98,162.6
+                 L98,181 L102,181
+                 C119.5,181 135.5,187.2 148,197.6
+                 L148,74 C148,53.6 139.7,35.1 126.3,21.7
+                 C112.9,8.3 94.4,0 74,0
+                 C33.1,0 0,33.1 0,74
+                 L0,258 C13.6,255.8 24,244.1 24,230
+                 L24,184.4 C30.9,182.2 38.3,181 46,181
+                 L50,181 L50,162.6
+                 C38.8,157.3 29.6,148.3 24,137.2
+                 L24,75.3 C33.1,72.3 42.8,68 52.3,62.5
+                 C67.7,53.6 80.4,42.9 89.1,32.4
+                 C90.8,37.6 93.2,42.8 96.1,47.9
+                 C104.9,63.1 117.2,74.2 130,79.9 Z"/>
+                        </g>
+                    </g>
+
+                </g> <!-- end of big masked group -->
+
+
+
+
+            </g>
+        </g>
+    </g>
+</svg>
