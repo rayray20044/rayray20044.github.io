@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Northfield Architects</title>
+<meta name="description" content="Under 30 — seven web design concepts by Rayan Alloush, each designed in under 30 minutes.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap">
+<style>
+body{margin:0;background:#F2F0EB}
+a{color:#111111}a:hover{color:#B8300C}
+*{box-sizing:border-box}
+</style>
+</head>
+<body>
+<div id="dc-root"></div>
+<script type="text/x-dc-template" id="dc-template">
+<div style="font-family: 'Inter Tight', system-ui, sans-serif; background: #F2F0EB; color: #111111; width: 100%; overflow: hidden">
+  <div style="max-width: 1360px; margin: 0 auto; padding: 0 48px">
+
+    <header style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 20px; padding: 28px 0; border-bottom: 1px solid #111111; font-size: 15px">
+      <a href="#top" style="font-weight: 700; text-decoration: none; letter-spacing: -0.2px">Northfield — Architects</a>
+      <nav aria-label="Main" style="display: flex; flex-wrap: wrap; gap: 32px">
+        <a href="#work" style="text-decoration: none">Work</a>
+        <a href="#studio" style="text-decoration: none">Studio</a>
+        <a href="#contact" style="text-decoration: none">Contact</a>
+      </nav>
+      <span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #555555">Copenhagen · 55.67° N</span>
+    </header>
+
+    <section id="top" style="padding: 88px 0 64px; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: 24px; row-gap: 40px">
+      <h1 style="grid-column: 1 / -1; margin: 0; font-size: clamp(64px, 10.5vw, 168px); line-height: 0.88; font-weight: 700; letter-spacing: -0.055em">Quiet buildings<br>for loud <span style="color: #E03A10">cities.</span></h1>
+      <p style="grid-column: 1 / span 4; margin: 0; font-family: 'IBM Plex Mono', monospace; font-size: 13px; line-height: 1.6; color: #555555">EST. 2011<br>Housing · Civic · Adaptive reuse</p>
+      <p style="grid-column: 7 / -1; margin: 0; font-size: 22px; line-height: 1.45; max-width: 560px">We are a studio of fourteen architects designing homes, libraries and workplaces that age well — built from honest materials, shaped by light, and made to outlast the trends that surround them.</p>
+    </section>
+
+    <section aria-label="Featured project" style="padding-bottom: 120px; display: flex; flex-direction: column; gap: 20px">
+      <div role="img" aria-label="Abstract elevation of the Havnehuset housing block" style="position: relative; height: 640px; background: #DCD7CC; overflow: hidden">
+        <div style="position: absolute; inset: auto 0 0 0; height: 90px; background: #8F8A80"></div>
+        <div style="position: absolute; left: 8%; bottom: 90px; width: 36%; height: 420px; background: #EFEBE3; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 14px; padding: 28px">
+          <sc-for list="{{winsA}}" as="w" hint-placeholder-count="20">
+            <div style="background: #2B2B2B; opacity: {{w.o}}"></div>
+          </sc-for>
+        </div>
+        <div style="position: absolute; left: 44%; bottom: 90px; width: 26%; height: 520px; background: #B9B2A5; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; padding: 24px">
+          <sc-for list="{{winsB}}" as="w" hint-placeholder-count="21">
+            <div style="background: #1B1B1B; opacity: {{w.o}}"></div>
+          </sc-for>
+        </div>
+        <div style="position: absolute; left: 70%; bottom: 90px; width: 22%; height: 300px; background: #EFEBE3; display: flex; flex-direction: column; gap: 18px; padding: 28px">
+          <div style="flex: 1; background: #2B2B2B; opacity: 0.85"></div>
+          <div style="flex: 1; background: #2B2B2B; opacity: 0.85"></div>
+          <div style="height: 54px; background: #E03A10"></div>
+        </div>
+        <div style="position: absolute; left: 0; right: 0; bottom: 90px; height: 2px; background: #111111"></div>
+        <div style="position: absolute; top: 28px; left: 28px; font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #111111">FIG. 01 — SOUTH ELEVATION</div>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: 24px; row-gap: 12px; font-size: 15px">
+        <span style="grid-column: span 3; font-weight: 700">Havnehuset</span>
+        <span style="grid-column: span 3; color: #555555">64 homes on a former dock</span>
+        <span style="grid-column: span 3; color: #555555">Nordhavn, Copenhagen</span>
+        <a href="#work" style="grid-column: span 3; text-align: right; font-weight: 500">View project →</a>
+      </div>
+    </section>
+
+    <section id="work" style="padding-bottom: 120px; display: flex; flex-direction: column; gap: 32px">
+      <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 20px; flex-wrap: wrap">
+        <h2 style="margin: 0; font-size: clamp(40px, 5vw, 72px); font-weight: 700; letter-spacing: -0.04em; line-height: 1">Selected work</h2>
+        <span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #555555">06 / 38 PROJECTS</span>
+      </div>
+      <div style="overflow-x: auto">
+        <table style="width: 100%; min-width: 760px; border-collapse: collapse; text-align: left; font-size: 18px">
+          <thead>
+            <tr style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #555555; letter-spacing: 0.5px">
+              <th scope="col" style="padding: 12px 0; font-weight: 500; width: 8%">NO.</th>
+              <th scope="col" style="padding: 12px 0; font-weight: 500; width: 36%">PROJECT</th>
+              <th scope="col" style="padding: 12px 0; font-weight: 500">TYPE</th>
+              <th scope="col" style="padding: 12px 0; font-weight: 500">LOCATION</th>
+              <th scope="col" style="padding: 12px 0; font-weight: 500; text-align: right">YEAR</th>
+            </tr>
+          </thead>
+          <tbody>
+            
+              <tr data-sc-for sc-list="{{projects}}" sc-as="p" hint-placeholder-count="6" style="border-top: 1px solid #111111">
+                <td style="padding: 26px 0; font-family: 'IBM Plex Mono', monospace; font-size: 14px; color: #555555">{{p.no}}</td>
+                <td style="padding: 26px 0; font-size: 28px; font-weight: 700; letter-spacing: -0.03em"><a href="#work" style="text-decoration: none">{{p.name}}</a></td>
+                <td style="padding: 26px 0; color: #333333">{{p.type}}</td>
+                <td style="padding: 26px 0; color: #333333">{{p.place}}</td>
+                <td style="padding: 26px 0; text-align: right; font-family: 'IBM Plex Mono', monospace; font-size: 15px">{{p.year}}</td>
+              </tr>
+            
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="studio" style="padding: 96px 0 120px; border-top: 1px solid #111111; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 48px">
+      <div style="display: flex; flex-direction: column; gap: 24px">
+        <span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #555555">THE STUDIO</span>
+        <h2 style="margin: 0; font-size: clamp(36px, 4vw, 56px); font-weight: 700; letter-spacing: -0.04em; line-height: 1.02">We'd rather add one good thing than ten clever ones.</h2>
+      </div>
+      <ol style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column">
+        <li style="display: grid; grid-template-columns: 64px 1fr; gap: 16px; padding: 24px 0; border-top: 1px solid #111111">
+          <span style="font-size: 40px; font-weight: 700; color: #E03A10; line-height: 1">1</span>
+          <div style="display: flex; flex-direction: column; gap: 8px"><h3 style="margin: 0; font-size: 22px; font-weight: 700">Keep what's there</h3><p style="margin: 0; font-size: 17px; line-height: 1.55; color: #333333">The greenest building is usually the one already standing. We start every brief by asking what can stay.</p></div>
+        </li>
+        <li style="display: grid; grid-template-columns: 64px 1fr; gap: 16px; padding: 24px 0; border-top: 1px solid #111111">
+          <span style="font-size: 40px; font-weight: 700; color: #E03A10; line-height: 1">2</span>
+          <div style="display: flex; flex-direction: column; gap: 8px"><h3 style="margin: 0; font-size: 22px; font-weight: 700">Design for daylight</h3><p style="margin: 0; font-size: 17px; line-height: 1.55; color: #333333">Plans are drawn around the sun's path first, the furniture second.</p></div>
+        </li>
+        <li style="display: grid; grid-template-columns: 64px 1fr; gap: 16px; padding: 24px 0; border-top: 1px solid #111111; border-bottom: 1px solid #111111">
+          <span style="font-size: 40px; font-weight: 700; color: #E03A10; line-height: 1">3</span>
+          <div style="display: flex; flex-direction: column; gap: 8px"><h3 style="margin: 0; font-size: 22px; font-weight: 700">Materials you can touch</h3><p style="margin: 0; font-size: 17px; line-height: 1.55; color: #333333">Timber, brick, lime and stone — chosen to weather gracefully, not to look new forever.</p></div>
+        </li>
+      </ol>
+    </section>
+  </div>
+
+  <footer id="contact" style="background: #111111; color: #F2F0EB">
+    <div style="max-width: 1360px; margin: 0 auto; padding: 96px 48px 40px; display: flex; flex-direction: column; gap: 72px">
+      <a href="#contact" style="color: #F2F0EB; text-decoration: none; font-size: clamp(56px, 9vw, 144px); font-weight: 700; letter-spacing: -0.055em; line-height: 0.9">Start a project <span style="color: #FF5A2E">→</span></a>
+      <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 24px; font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #BDBAB3">
+        <span>[Studio address]</span>
+        <span>[Email] · [Phone]</span>
+        <span>Concept design for a fictional studio.</span>
+      </div>
+    </div>
+  </footer>
+</div>
+</script>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    var patA = [0.9,0.9,0.25,0.9,0.9, 0.9,0.25,0.9,0.9,0.9, 0.9,0.9,0.9,0.25,0.9, 0.25,0.9,0.9,0.9,0.9];
+    var patB = [0.9,0.3,0.9, 0.9,0.9,0.9, 0.3,0.9,0.9, 0.9,0.9,0.3, 0.9,0.9,0.9, 0.9,0.3,0.9, 0.9,0.9,0.9];
+    var wrap = function (o) { return { o: o }; };
+    return {
+      winsA: patA.map(wrap),
+      winsB: patB.map(wrap),
+      projects: [
+        { no: '038', name: 'Havnehuset', type: 'Housing', place: 'Copenhagen, DK', year: '2025' },
+        { no: '034', name: 'Lindvej Library', type: 'Civic', place: 'Aarhus, DK', year: '2024' },
+        { no: '031', name: 'The Malt Store', type: 'Adaptive reuse', place: 'Malmö, SE', year: '2023' },
+        { no: '027', name: 'Fjordside School', type: 'Education', place: 'Vejle, DK', year: '2022' },
+        { no: '022', name: 'Kiln Yard Offices', type: 'Workplace', place: 'Hamburg, DE', year: '2020' },
+        { no: '017', name: 'Bakkehus', type: 'Private house', place: 'Møn, DK', year: '2018' }
+      ]
+    };
+  }
+}
+</script>
+<script src="dc-mini.js"></script>
+<a href="index.html" class="u30-back" aria-label="Back to the Under 30 overview">← Under 30</a>
+<style>
+.u30-back{position:fixed;left:16px;bottom:16px;z-index:9999;display:inline-flex;align-items:center;min-height:44px;padding:0 18px;border-radius:999px;background:#141414;color:#f5f3ee!important;font:600 14px Inter,system-ui,sans-serif;text-decoration:none;box-shadow:0 8px 30px rgba(0,0,0,.25);border:1px solid rgba(255,255,255,.15)}
+.u30-back:hover{background:#ff5b2e;color:#141414!important}
+</style>
+</body>
+</html>

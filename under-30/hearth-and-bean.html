@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hearth &amp; Bean Roasters — Christmas coffees</title>
+<meta name="description" content="Under 30 — seven web design concepts by Rayan Alloush, each designed in under 30 minutes.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,700;1,9..144,400;1,9..144,600&amp;family=Nunito:wght@400;600;800&amp;display=swap">
+<style>
+body{margin:0;background:#FBF3E6}
+a{color:#4A2E22}a:hover{color:#B23A3A}
+*{box-sizing:border-box}
+@keyframes hb-fall{0%{transform:translate(0,-30px)}50%{transform:translate(18px,450px)}100%{transform:translate(-6px,960px)}}
+@keyframes hb-twinkle{0%,100%{opacity:1}50%{opacity:.35}}
+@keyframes hb-steam{0%{opacity:0;transform:translateY(14px) scaleX(1)}40%{opacity:.85}100%{opacity:0;transform:translateY(-34px) scaleX(1.2)}}
+@keyframes hb-sway{0%,100%{transform:rotate(-4deg)}50%{transform:rotate(4deg)}}
+@keyframes hb-glow{0%,100%{opacity:.55}50%{opacity:.85}}
+@keyframes hb-bob{0%,100%{transform:translateY(0) rotate(-3deg)}50%{transform:translateY(-10px) rotate(2deg)}}
+.hb-flake{animation-name:hb-fall;animation-timing-function:linear;animation-iteration-count:infinite}
+.hb-bulb{animation:hb-twinkle 1.8s ease-in-out infinite}
+.hb-steam{transform-box:fill-box;transform-origin:center bottom;animation:hb-steam 3.2s ease-in-out infinite}
+.hb-sway{transform-origin:top center;animation:hb-sway 3s ease-in-out infinite}
+.hb-glow{animation:hb-glow 4s ease-in-out infinite}
+.hb-bob{transform-box:fill-box;transform-origin:center;animation:hb-bob 4.5s ease-in-out infinite}
+.hb-door{transition:transform .35s ease, background .35s ease}
+.hb-door:hover{transform:translateY(-4px) rotate(-1deg)}
+.hb-bag{transition:transform .35s ease, box-shadow .35s ease}
+.hb-bag:hover{transform:translateY(-6px);box-shadow:0 22px 40px rgba(74,46,34,0.16)}
+@media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}.hb-flake{display:none}}
+</style>
+</head>
+<body>
+<div id="dc-root"></div>
+<script type="text/x-dc-template" id="dc-template">
+<div style="font-family: Nunito, system-ui, sans-serif; background: #FBF3E6; color: #4A2E22; width: 100%; overflow: hidden">
+
+  <section id="top" style="position: relative; background: #1F4D3A; color: #FBF3E6; overflow: hidden">
+    <div aria-hidden="true" style="position: absolute; inset: 0; pointer-events: none">
+      <sc-for list="{{flakes}}" as="f" hint-placeholder-count="0">
+        <span class="hb-flake" style="{{f.style}}"></span>
+      </sc-for>
+    </div>
+
+    <div aria-hidden="true" style="position: relative; height: 52px">
+      <svg viewBox="0 0 1440 40" preserveAspectRatio="none" style="position: absolute; top: 0; left: 0; width: 100%; height: 40px"><path d="M0 6 Q 60 30 120 6 T 240 6 T 360 6 T 480 6 T 600 6 T 720 6 T 840 6 T 960 6 T 1080 6 T 1200 6 T 1320 6 T 1440 6" fill="none" stroke="#0F2A1F" stroke-width="2"></path></svg>
+      <div style="position: absolute; inset: 0; display: flex; justify-content: space-around">
+        <sc-for list="{{bulbs}}" as="b" hint-placeholder-count="0">
+          <span class="hb-bulb" style="{{b.style}}"></span>
+        </sc-for>
+      </div>
+    </div>
+
+    <header style="position: relative; max-width: 1280px; margin: 0 auto; padding: 16px 40px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px">
+      <a href="#top" style="display: flex; align-items: center; gap: 10px; text-decoration: none; color: #FBF3E6; font-family: Fraunces, serif; font-size: 28px; font-weight: 700">
+        <svg width="30" height="30" viewBox="0 0 30 30" fill="none" aria-hidden="true"><ellipse cx="15" cy="15" rx="9" ry="12" transform="rotate(30 15 15)" fill="#E2B04A"></ellipse><path d="M10 7 C16 12 14 18 20 23" stroke="#1F4D3A" stroke-width="2" fill="none" stroke-linecap="round"></path></svg>
+        Hearth &amp; Bean <span style="font-size: 15px; font-weight: 400; font-style: italic; color: #E8DCC8">roasters</span>
+      </a>
+      <nav aria-label="Main" style="display: flex; flex-wrap: wrap; gap: 30px; font-weight: 600; font-size: 16px">
+        <a href="#beans" style="color: #FBF3E6; text-decoration: none">Christmas coffees</a>
+        <a href="#advent" style="color: #FBF3E6; text-decoration: none">Advent box</a>
+        <a href="#gifts" style="color: #FBF3E6; text-decoration: none">Gifts &amp; shipping</a>
+      </nav>
+      <a href="#beans" style="min-height: 46px; padding: 0 22px; display: inline-flex; align-items: center; gap: 8px; border-radius: 999px; background: #E2B04A; color: #1F2A1F; text-decoration: none; font-weight: 800">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 7h12l-1 13H7z"></path><path d="M9 7a3 3 0 0 1 6 0"></path></svg>
+        Basket (0)
+      </a>
+    </header>
+
+    <div style="position: relative; max-width: 1280px; margin: 0 auto; padding: 56px 40px 110px; display: flex; flex-wrap: wrap; align-items: center; gap: 48px">
+      <div style="flex: 1 1 480px; min-width: 0; display: flex; flex-direction: column; gap: 24px">
+        <span style="align-self: flex-start; padding: 8px 16px; border-radius: 999px; border: 1.5px dashed #E2B04A; color: #E2B04A; font-weight: 800; font-size: 14px; letter-spacing: 1.5px">LIMITED CHRISTMAS ROAST · SMALL BATCH</span>
+        <h1 style="margin: 0; font-family: Fraunces, serif; font-size: clamp(56px, 7vw, 104px); font-weight: 400; line-height: 0.98; letter-spacing: -2px">Christmas,<br><em style="font-weight: 600; color: #F4C66A">freshly roasted.</em></h1>
+        <p style="margin: 0; max-width: 480px; font-size: 20px; line-height: 1.6; color: #E8DCC8">Our winter blend tastes of dark cherry, gingerbread and cocoa. Roasted by hand every Monday and sent to your door while it's still singing.</p>
+        <div style="display: flex; flex-wrap: wrap; gap: 12px">
+          <a href="#beans" style="min-height: 56px; padding: 0 30px; display: inline-flex; align-items: center; border-radius: 999px; background: #B23A3A; color: #FBF3E6; text-decoration: none; font-weight: 800; font-size: 17px">Shop the Christmas Blend</a>
+          <a href="#advent" style="min-height: 56px; padding: 0 30px; display: inline-flex; align-items: center; border-radius: 999px; border: 2px solid #FBF3E6; color: #FBF3E6; text-decoration: none; font-weight: 800; font-size: 17px">Peek in the advent box</a>
+        </div>
+        <ul style="margin: 0; padding: 8px 0 0; list-style: none; display: flex; flex-wrap: wrap; gap: 10px 26px; font-size: 15px; font-weight: 600; color: #E8DCC8">
+          <li>✓ Roasted to order</li>
+          <li>✓ Free shipping over €40</li>
+          <li>✓ Compostable bags</li>
+        </ul>
+      </div>
+
+      <div style="flex: 1 1 420px; min-width: 0; display: flex; justify-content: center; position: relative">
+        <div aria-hidden="true" class="hb-glow" style="position: absolute; width: 420px; height: 420px; max-width: 100%; border-radius: 50%; background: #F4C66A; filter: blur(90px); opacity: .6; top: 30px"></div>
+        <svg role="img" aria-label="A kraft paper bag of Hearth &amp; Bean Christmas Blend coffee beside a steaming cup, with roasted beans scattered around" viewBox="0 0 440 440" style="position: relative; width: min(460px, 100%); height: auto">
+          <ellipse cx="220" cy="404" rx="190" ry="22" fill="#0F2A1F" opacity="0.6"></ellipse>
+          <path d="M110 110 L280 110 L296 392 C296 398 292 402 286 402 L104 402 C98 402 94 398 94 392 Z" fill="#C9A27A"></path>
+          <path d="M110 110 L280 110 L284 150 L106 150 Z" fill="#B48A62"></path>
+          <path d="M104 70 L286 70 L280 110 L110 110 Z" fill="#D8B48C"></path>
+          <rect x="96" y="84" width="198" height="10" rx="5" fill="#8A5A3B"></rect>
+          <path d="M122 120 L268 120" stroke="#9C7550" stroke-width="2" stroke-dasharray="6 6"></path>
+          <rect x="122" y="182" width="146" height="170" rx="16" fill="#B23A3A"></rect>
+          <rect x="132" y="192" width="126" height="150" rx="10" fill="none" stroke="#F4C66A" stroke-width="2" stroke-dasharray="3 6"></rect>
+          <path d="M195 210 L200 224 L215 224 L203 233 L208 247 L195 238 L182 247 L187 233 L175 224 L190 224 Z" fill="#F4C66A"></path>
+          <text x="195" y="282" text-anchor="middle" font-family="Fraunces, serif" font-size="25" font-weight="700" fill="#FBF3E6">Christmas</text>
+          <text x="195" y="308" text-anchor="middle" font-family="Fraunces, serif" font-size="25" font-style="italic" fill="#FBF3E6">Blend</text>
+          <text x="195" y="330" text-anchor="middle" font-family="Nunito, sans-serif" font-size="11" font-weight="800" letter-spacing="2" fill="#F4C66A">250 G · WHOLE BEAN</text>
+          <path class="hb-steam" d="M338 262 C328 246 348 236 338 218" fill="none" stroke="#FBF3E6" stroke-width="5" stroke-linecap="round" style="animation-delay: 0s"></path>
+          <path class="hb-steam" d="M366 258 C356 240 376 230 366 210" fill="none" stroke="#FBF3E6" stroke-width="5" stroke-linecap="round" style="animation-delay: 1.4s"></path>
+          <path d="M392 306 C418 306 418 344 392 344" fill="none" stroke="#FBF3E6" stroke-width="10" stroke-linecap="round"></path>
+          <path d="M308 282 L398 282 L392 382 C391 392 384 398 374 398 L332 398 C322 398 315 392 314 382 Z" fill="#FBF3E6"></path>
+          <ellipse cx="353" cy="282" rx="45" ry="9" fill="#6B3E2A"></ellipse>
+          <path d="M340 336 C340 336 326 326 326 318 C326 312 334 309 340 316 C346 309 354 312 354 318 C354 326 340 336 340 336 Z" fill="#B23A3A"></path>
+          <g class="hb-bob"><ellipse cx="60" cy="300" rx="16" ry="22" transform="rotate(-30 60 300)" fill="#5A3424"></ellipse><path d="M52 284 C64 294 56 306 68 316" stroke="#2E1A12" stroke-width="2.5" fill="none"></path></g>
+          <g class="hb-bob" style="animation-delay: -1.5s"><ellipse cx="44" cy="372" rx="13" ry="18" transform="rotate(40 44 372)" fill="#6B3E2A"></ellipse><path d="M38 360 C48 368 40 378 50 386" stroke="#2E1A12" stroke-width="2" fill="none"></path></g>
+          <g class="hb-bob" style="animation-delay: -3s"><ellipse cx="380" cy="160" rx="13" ry="18" transform="rotate(20 380 160)" fill="#5A3424"></ellipse><path d="M374 148 C384 156 376 166 386 174" stroke="#2E1A12" stroke-width="2" fill="none"></path></g>
+        </svg>
+        <div class="hb-sway" aria-hidden="true" style="position: absolute; top: -56px; left: 6%; display: flex; flex-direction: column; align-items: center">
+          <div style="width: 2px; height: 70px; background: #E2B04A"></div>
+          <svg width="56" height="56" viewBox="0 0 56 56"><path d="M28 2 L34 20 L53 20 L38 32 L44 51 L28 40 L12 51 L18 32 L3 20 L22 20 Z" fill="#E2B04A"></path></svg>
+        </div>
+      </div>
+    </div>
+
+    <svg aria-hidden="true" viewBox="0 0 1440 60" preserveAspectRatio="none" style="position: absolute; left: 0; bottom: -1px; width: 100%; height: 60px; display: block"><path d="M0 60 L0 30 C80 10 140 40 220 26 C300 12 360 44 460 30 C560 16 620 42 720 28 C820 14 880 44 980 30 C1080 16 1140 42 1240 28 C1320 18 1380 34 1440 26 L1440 60 Z" fill="#FBF3E6"></path></svg>
+  </section>
+
+  <section id="beans" style="max-width: 1280px; margin: 0 auto; padding: 96px 40px; display: flex; flex-direction: column; gap: 48px">
+    <div style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 12px">
+      <span style="font-family: Fraunces, serif; font-style: italic; font-size: 22px; color: #B23A3A">roasted until the bags run out</span>
+      <h2 style="margin: 0; font-family: Fraunces, serif; font-size: clamp(44px, 5vw, 68px); font-weight: 700; letter-spacing: -1.5px; line-height: 1">The winter coffees</h2>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px">
+      <sc-for list="{{beans}}" as="d" hint-placeholder-count="4">
+        <article class="hb-bag" style="background: #FFFFFF; border-radius: 28px; padding: 28px; display: flex; flex-direction: column; gap: 14px; box-shadow: 0 12px 30px rgba(74,46,34,0.08)">
+          <div aria-hidden="true" style="{{d.badge}}">
+            <svg width="70" height="84" viewBox="0 0 70 84" fill="none"><path d="M14 14 L56 14 L60 78 L10 78 Z" fill="#C9A27A"></path><path d="M12 6 L58 6 L56 14 L14 14 Z" fill="#D8B48C"></path><rect x="19" y="32" width="32" height="34" rx="5" fill="#FBF3E6"></rect><ellipse cx="35" cy="49" rx="6" ry="9" transform="rotate(25 35 49)" fill="#6B3E2A"></ellipse></svg>
+          </div>
+          <span style="font-size: 13px; font-weight: 800; letter-spacing: 1.5px; color: #1F4D3A">{{d.origin}}</span>
+          <h3 style="margin: 0; font-family: Fraunces, serif; font-size: 26px; font-weight: 700; line-height: 1.15">{{d.name}}</h3>
+          <p style="margin: 0; font-size: 16px; line-height: 1.55; color: #6B5146">{{d.notes}}</p>
+          <div style="display: flex; align-items: center; gap: 10px; font-size: 14px; font-weight: 600; color: #6B5146">
+            <span>Roast</span>
+            <span role="img" aria-label="{{d.roastLabel}}" style="display: flex; gap: 5px">
+              <sc-for list="{{d.dots}}" as="dot" hint-placeholder-count="5">
+                <span style="{{dot.style}}"></span>
+              </sc-for>
+            </span>
+          </div>
+          <div style="margin-top: auto; display: flex; justify-content: space-between; align-items: center; gap: 12px; padding-top: 14px; border-top: 2px dashed #EADCC6">
+            <span style="font-family: Fraunces, serif; font-size: 22px; font-weight: 700">{{d.price}} <span style="font-family: Nunito, sans-serif; font-size: 14px; font-weight: 600; color: #6B5146">/ 250 g</span></span>
+            <button aria-label="Add {{d.name}} to basket" style="min-height: 44px; padding: 0 18px; border-radius: 999px; border: none; background: #1F4D3A; color: #FBF3E6; font: 800 15px Nunito, sans-serif; cursor: pointer">Add +</button>
+          </div>
+        </article>
+      </sc-for>
+    </div>
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 12px 28px; font-size: 17px">
+      <span style="font-weight: 800; color: #B23A3A">Ground for you:</span>
+      <span>Whole bean</span><span aria-hidden="true" style="color: #E2B04A">✦</span>
+      <span>Espresso</span><span aria-hidden="true" style="color: #E2B04A">✦</span>
+      <span>Filter</span><span aria-hidden="true" style="color: #E2B04A">✦</span>
+      <span>French press</span><span aria-hidden="true" style="color: #E2B04A">✦</span>
+      <span>Moka pot</span>
+    </div>
+  </section>
+
+  <section id="advent" style="background: #F3E4CC">
+    <div style="max-width: 1280px; margin: 0 auto; padding: 96px 40px; display: flex; flex-direction: column; gap: 40px">
+      <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 24px">
+        <div style="display: flex; flex-direction: column; gap: 10px">
+          <span style="font-family: Fraunces, serif; font-style: italic; font-size: 22px; color: #B23A3A">tap a door to peek inside</span>
+          <h2 style="margin: 0; font-family: Fraunces, serif; font-size: clamp(44px, 5vw, 68px); font-weight: 700; letter-spacing: -1.5px; line-height: 1">The 12 days of coffee</h2>
+        </div>
+        <div style="max-width: 400px; display: flex; flex-direction: column; gap: 16px">
+          <p style="margin: 0; font-size: 18px; line-height: 1.55; color: #6B5146">Twelve mini bags, twelve origins, one coffee trip around the world from December 13th to Christmas Eve. Each 30 g bag brews about two cups.</p>
+          <a href="#advent" style="align-self: flex-start; min-height: 52px; padding: 0 26px; display: inline-flex; align-items: center; border-radius: 999px; background: #B23A3A; color: #FBF3E6; text-decoration: none; font-weight: 800">Get the advent box — [Price]</a>
+        </div>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 16px">
+        <sc-for list="{{doors}}" as="d" hint-placeholder-count="12">
+          <button class="hb-door" onClick="{{d.toggle}}" aria-pressed="{{d.pressed}}" aria-label="{{d.label}}" style="{{d.style}}">
+            <sc-if value="{{d.open}}" hint-placeholder-val="{{false}}">
+              <span style="font-size: 13px; font-weight: 800; letter-spacing: 1px; color: #B23A3A">DEC {{d.date}}</span>
+              <span style="display: flex; flex-direction: column; gap: 4px">
+                <span style="font-family: Fraunces, serif; font-size: 20px; font-weight: 700; line-height: 1.15; color: #4A2E22">{{d.origin}}</span>
+                <span style="font-size: 14px; line-height: 1.35; color: #6B5146">{{d.notes}}</span>
+              </span>
+            </sc-if>
+            <sc-if value="{{d.closed}}" hint-placeholder-val="{{true}}">
+              <span style="font-family: Fraunces, serif; font-size: 52px; font-weight: 700; line-height: 1">{{d.date}}</span>
+              <span style="width: 12px; height: 12px; border-radius: 50%; background: #E2B04A; align-self: flex-end"></span>
+            </sc-if>
+          </button>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section id="gifts" style="max-width: 1280px; margin: 0 auto; padding: 96px 40px; display: flex; flex-wrap: wrap; gap: 48px; align-items: stretch">
+    <div style="flex: 1 1 440px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
+      <h2 style="margin: 0; font-family: Fraunces, serif; font-size: clamp(44px, 5vw, 68px); font-weight: 700; letter-spacing: -1.5px; line-height: 1">Roasted Monday,<br><em style="font-weight: 400; color: #B23A3A">at your door by Wednesday.</em></h2>
+      <p style="margin: 0; font-size: 18px; line-height: 1.6; color: #6B5146">We never roast ahead. Your beans leave our little roastery within a day of coming out of the drum, so they arrive at their sweetest.</p>
+      <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; font-size: 17px">
+        <sc-for list="{{shipping}}" as="h" hint-placeholder-count="4">
+          <li style="display: flex; justify-content: space-between; gap: 20px; padding: 14px 0; border-bottom: 2px dashed #EADCC6"><span style="font-weight: 600">{{h.a}}</span><span style="text-align: right">{{h.b}}</span></li>
+        </sc-for>
+      </ul>
+    </div>
+    <div style="flex: 1 1 440px; min-width: 0; border-radius: 32px; background: #1F4D3A; color: #FBF3E6; padding: 44px; display: flex; flex-direction: column; justify-content: space-between; gap: 28px; position: relative; overflow: hidden">
+      <svg aria-hidden="true" width="220" height="220" viewBox="0 0 100 100" style="position: absolute; right: -40px; top: -40px; opacity: 0.18"><path d="M50 5 L50 95 M11 27 L89 73 M11 73 L89 27 M50 20 L42 12 M50 20 L58 12 M50 80 L42 88 M50 80 L58 88" stroke="#FBF3E6" stroke-width="4" stroke-linecap="round"></path></svg>
+      <div style="display: flex; flex-direction: column; gap: 14px; position: relative">
+        <span style="font-weight: 800; letter-spacing: 2px; font-size: 14px; color: #E2B04A">THE GIFT THAT KEEPS BREWING</span>
+        <h3 style="margin: 0; font-family: Fraunces, serif; font-size: 40px; font-weight: 700; line-height: 1.05">Give a coffee subscription, wrapped in kraft and twine.</h3>
+        <p style="margin: 0; font-size: 17px; line-height: 1.6; color: #E8DCC8">Three, six or twelve months of fresh beans, a handwritten card under the tree, and a new origin to discover every month.</p>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; gap: 10px; position: relative">
+        <a href="#gifts" style="min-height: 54px; padding: 0 28px; display: inline-flex; align-items: center; border-radius: 999px; background: #E2B04A; color: #1F2A1F; text-decoration: none; font-weight: 800; font-size: 17px">Gift a subscription</a>
+        <a href="#gifts" style="min-height: 54px; padding: 0 24px; display: inline-flex; align-items: center; border-radius: 999px; border: 2px solid #FBF3E6; color: #FBF3E6; text-decoration: none; font-weight: 800; font-size: 17px">Gift card</a>
+      </div>
+    </div>
+  </section>
+
+  <footer style="background: #4A2E22; color: #FBF3E6">
+    <div style="max-width: 1280px; margin: 0 auto; padding: 44px 40px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 20px">
+      <span style="font-family: Fraunces, serif; font-size: 24px; font-weight: 700">Hearth &amp; Bean Roasters</span>
+      <span style="font-family: Fraunces, serif; font-style: italic; font-size: 18px; color: #F4C66A">Merry everything, from our roastery to your kitchen.</span>
+      <span style="font-size: 14px; color: #D9C7B4">Concept design for a fictional coffee roaster.</span>
+    </div>
+  </footer>
+</div>
+</script>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { opened: {} };
+  }
+  renderVals() {
+    var self = this;
+    var r = function (n) { var x = Math.sin(n * 12.9898) * 43758.5453; return x - Math.floor(x); };
+    var flakes = [];
+    for (var i = 1; i <= 70; i++) {
+      var s = 3 + Math.round(r(i + 40) * 6);
+      flakes.push({ style: 'position: absolute; top: -20px; left: ' + (r(i) * 100).toFixed(2) + '%; width: ' + s + 'px; height: ' + s + 'px; border-radius: 50%; background: #FFFFFF; opacity: ' + (0.35 + r(i + 80) * 0.6).toFixed(2) + '; animation-duration: ' + (8 + r(i + 120) * 10).toFixed(2) + 's; animation-delay: -' + (r(i + 160) * 18).toFixed(2) + 's' });
+    }
+    var bulbColors = ['#F4C66A', '#E2574C', '#8FD18B', '#FBF3E6', '#6FB7E8'];
+    var bulbs = [];
+    for (var b = 0; b < 24; b++) {
+      var c = bulbColors[b % bulbColors.length];
+      bulbs.push({ style: 'margin-top: ' + (b % 2 === 0 ? 18 : 10) + 'px; width: 14px; height: 22px; border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%; background: ' + c + '; box-shadow: 0 0 14px 3px ' + c + '; animation-delay: ' + ((b * 0.37) % 1.8).toFixed(2) + 's' });
+    }
+    var badgeColors = ['#B23A3A', '#1F4D3A', '#8A5A3B', '#C98A1E'];
+    var beans = [
+      { name: 'Christmas Blend', origin: 'ETHIOPIA · COLOMBIA', notes: 'Dark cherry, gingerbread spice and cocoa. Our cosiest cup of the year.', roast: 3, price: '€14' },
+      { name: 'Winter Solstice Espresso', origin: 'BRAZIL · SUMATRA', notes: 'Molasses, toasted hazelnut and a hint of clove. Made for milk drinks.', roast: 4, price: '€13' },
+      { name: 'Snowfall Decaf', origin: 'PERU · SWISS WATER', notes: 'Milk chocolate, orange peel and brown sugar, without the late-night buzz.', roast: 3, price: '€13' },
+      { name: 'Red Berry Kenya', origin: 'KENYA · NYERI', notes: 'Blackcurrant, cranberry and hibiscus. Bright and festive as a filter.', roast: 1, price: '€16' }
+    ].map(function (d, k) {
+      var dots = [];
+      for (var j = 1; j <= 5; j++) {
+        dots.push({ style: 'width: 12px; height: 12px; border-radius: 50%; border: 2px solid #6B3E2A; background: ' + (j <= d.roast ? '#6B3E2A' : 'transparent') });
+      }
+      return Object.assign({}, d, {
+        dots: dots,
+        roastLabel: 'Roast level ' + d.roast + ' of 5',
+        badge: 'width: 92px; height: 100px; border-radius: 24px; display: flex; align-items: center; justify-content: center; background: ' + badgeColors[k]
+      });
+    });
+    var origins = [
+      ['Guatemala', 'Caramel, red apple'], ['Rwanda', 'Plum, black tea'], ['Costa Rica', 'Honey, orange'], ['Ethiopia Guji', 'Blueberry, jasmine'],
+      ['Colombia', 'Toffee, cherry'], ['Burundi', 'Raspberry, cocoa'], ['Brazil', 'Peanut, milk chocolate'], ['Honduras', 'Brown sugar, pear'],
+      ['Papua New Guinea', 'Cedar, dark chocolate'], ['El Salvador', 'Fudge, almond'], ['Kenya', 'Blackcurrant, grapefruit'], ['Christmas Eve', 'A secret micro-lot, our gift to you']
+    ];
+    var opened = this.state.opened;
+    var doors = origins.map(function (o, k) {
+      var date = 13 + k;
+      var isOpen = !!opened[k];
+      var closedBg = k % 3 === 0 ? '#B23A3A' : (k % 3 === 1 ? '#1F4D3A' : '#8A5A3B');
+      return {
+        date: date,
+        origin: o[0],
+        notes: o[1],
+        open: isOpen,
+        closed: !isOpen,
+        pressed: isOpen ? 'true' : 'false',
+        label: isOpen ? 'December ' + date + ': ' + o[0] + ', ' + o[1] : 'Open door for December ' + date,
+        toggle: function () { var x = Object.assign({}, self.state.opened); x[k] = !x[k]; self.setState({ opened: x }); },
+        style: 'min-height: 160px; padding: 18px; border-radius: 22px; cursor: pointer; text-align: left; display: flex; flex-direction: column; justify-content: space-between; gap: 10px; font-family: Nunito, sans-serif; ' + (isOpen ? 'background: #FFFFFF; border: 2px dashed #E2B04A; color: #4A2E22' : 'background: ' + closedBg + '; border: 2px solid ' + closedBg + '; color: #FBF3E6; box-shadow: inset 0 0 0 6px rgba(251,243,230,0.12)')
+      };
+    });
+    return {
+      flakes: flakes,
+      bulbs: bulbs,
+      beans: beans,
+      doors: doors,
+      shipping: [
+        { a: 'Free shipping', b: 'On orders over €40' },
+        { a: 'Christmas delivery', b: 'Order by December 18th' },
+        { a: 'Packaging', b: 'Home-compostable bags' },
+        { a: 'Roast days', b: 'Every Monday & Thursday' }
+      ]
+    };
+  }
+}
+</script>
+<script src="dc-mini.js"></script>
+<a href="index.html" class="u30-back" aria-label="Back to the Under 30 overview">← Under 30</a>
+<style>
+.u30-back{position:fixed;left:16px;bottom:16px;z-index:9999;display:inline-flex;align-items:center;min-height:44px;padding:0 18px;border-radius:999px;background:#141414;color:#f5f3ee!important;font:600 14px Inter,system-ui,sans-serif;text-decoration:none;box-shadow:0 8px 30px rgba(0,0,0,.25);border:1px solid rgba(255,255,255,.15)}
+.u30-back:hover{background:#ff5b2e;color:#141414!important}
+</style>
+</body>
+</html>

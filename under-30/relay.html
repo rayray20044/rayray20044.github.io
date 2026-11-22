@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Relay — webhook infrastructure</title>
+<meta name="description" content="Under 30 — seven web design concepts by Rayan Alloush, each designed in under 30 minutes.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap">
+<style>
+body{margin:0;background:#0B0D10}
+a{color:#E6E8EB}a:hover{color:#C6FF3D}
+*{box-sizing:border-box}
+</style>
+</head>
+<body>
+<div id="dc-root"></div>
+<script type="text/x-dc-template" id="dc-template">
+<div style="font-family: 'Space Grotesk', system-ui, sans-serif; background: #0B0D10; color: #E6E8EB; width: 100%; overflow: hidden">
+
+  <header style="border-bottom: 1px solid #1E2329">
+    <div style="max-width: 1240px; margin: 0 auto; padding: 20px 32px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px">
+      <a href="#top" style="display: flex; align-items: center; gap: 10px; text-decoration: none; font-size: 22px; font-weight: 700">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true"><circle cx="6" cy="14" r="4" fill="#C6FF3D"></circle><circle cx="22" cy="6" r="3" stroke="#C6FF3D" stroke-width="2"></circle><circle cx="22" cy="22" r="3" stroke="#C6FF3D" stroke-width="2"></circle><path d="M10 12L19 7M10 16L19 21" stroke="#C6FF3D" stroke-width="2"></path></svg>
+        relay
+      </a>
+      <nav aria-label="Main" style="display: flex; flex-wrap: wrap; gap: 28px; font-size: 15px">
+        <a href="#features" style="text-decoration: none">Product</a>
+        <a href="#code" style="text-decoration: none">Docs</a>
+        <a href="#pricing" style="text-decoration: none">Pricing</a>
+        <a href="#top" style="text-decoration: none">Changelog</a>
+      </nav>
+      <div style="display: flex; gap: 10px; align-items: center">
+        <a href="#top" style="min-height: 44px; padding: 0 16px; display: inline-flex; align-items: center; text-decoration: none; font-size: 15px">Sign in</a>
+        <a href="#pricing" style="min-height: 44px; padding: 0 18px; display: inline-flex; align-items: center; text-decoration: none; font-size: 15px; font-weight: 700; background: #C6FF3D; color: #0B0D10; border-radius: 8px">Start free</a>
+      </div>
+    </div>
+  </header>
+
+  <section id="top" style="max-width: 1240px; margin: 0 auto; padding: 96px 32px 72px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 28px">
+    <a href="#top" style="display: inline-flex; align-items: center; gap: 10px; padding: 8px 14px; border: 1px solid #2A3038; border-radius: 999px; font-family: 'JetBrains Mono', monospace; font-size: 13px; text-decoration: none; color: #9BA3AF">
+      <span style="width: 8px; height: 8px; border-radius: 50%; background: #C6FF3D"></span>
+      New: replay any event from the CLI →
+    </a>
+    <h1 style="margin: 0; max-width: 980px; font-size: clamp(48px, 6.5vw, 92px); line-height: 1; font-weight: 700; letter-spacing: -3px">Every webhook delivered.<br><span style="color: #C6FF3D">Or you'll know why.</span></h1>
+    <p style="margin: 0; max-width: 620px; font-size: 20px; line-height: 1.55; color: #9BA3AF">Relay sits between your app and the outside world — retrying failures, signing payloads and logging every attempt, so a flaky endpoint never turns into a 3 a.m. page.</p>
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 12px">
+      <a href="#pricing" style="min-height: 52px; padding: 0 26px; display: inline-flex; align-items: center; text-decoration: none; font-size: 17px; font-weight: 700; background: #C6FF3D; color: #0B0D10; border-radius: 10px">Start for free</a>
+      <div style="min-height: 52px; padding: 0 20px; display: inline-flex; align-items: center; gap: 14px; border: 1px solid #2A3038; border-radius: 10px; font-family: 'JetBrains Mono', monospace; font-size: 15px; background: #12161B">
+        <span style="color: #6B7480">$</span>
+        <span>npm i @relay/sdk</span>
+        <button aria-label="Copy install command" style="width: 44px; height: 44px; margin-right: -12px; border: none; background: transparent; color: #9BA3AF; cursor: pointer; display: inline-flex; align-items: center; justify-content: center">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"></rect><path d="M5 15V5a2 2 0 0 1 2-2h10"></path></svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <section aria-label="Product preview" style="max-width: 1240px; margin: 0 auto; padding: 0 32px 120px">
+    <div style="border: 1px solid #2A3038; border-radius: 16px; background: #12161B; overflow: hidden; box-shadow: 0 40px 120px rgba(198,255,61,0.08)">
+      <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; padding: 16px 20px; border-bottom: 1px solid #2A3038">
+        <div style="display: flex; align-items: center; gap: 16px">
+          <span style="font-weight: 700">Events</span>
+          <span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #9BA3AF">prod · last 15 min</span>
+        </div>
+        <div style="display: flex; flex-wrap: wrap; gap: 8px; font-family: 'JetBrains Mono', monospace; font-size: 13px">
+          <span style="padding: 6px 10px; border-radius: 6px; background: rgba(198,255,61,0.12); color: #C6FF3D">● 1,284 delivered</span>
+          <span style="padding: 6px 10px; border-radius: 6px; background: rgba(255,176,32,0.12); color: #FFB020">● 3 retrying</span>
+          <span style="padding: 6px 10px; border-radius: 6px; background: rgba(255,107,107,0.12); color: #FF8A8A">● 1 failed</span>
+        </div>
+      </div>
+      <div style="overflow-x: auto">
+        <table style="width: 100%; min-width: 820px; border-collapse: collapse; font-family: 'JetBrains Mono', monospace; font-size: 14px; text-align: left">
+          <thead>
+            <tr style="color: #9BA3AF">
+              <th scope="col" style="padding: 14px 20px; font-weight: 500">Status</th>
+              <th scope="col" style="padding: 14px 20px; font-weight: 500">Event</th>
+              <th scope="col" style="padding: 14px 20px; font-weight: 500">Endpoint</th>
+              <th scope="col" style="padding: 14px 20px; font-weight: 500">Attempts</th>
+              <th scope="col" style="padding: 14px 20px; font-weight: 500; text-align: right">Time</th>
+            </tr>
+          </thead>
+          <tbody>
+            
+              <tr data-sc-for sc-list="{{events}}" sc-as="e" hint-placeholder-count="6" style="border-top: 1px solid #1E2329">
+                <td style="padding: 14px 20px"><span style="{{e.chip}}">{{e.code}}</span></td>
+                <td style="padding: 14px 20px; color: #E6E8EB">{{e.name}}</td>
+                <td style="padding: 14px 20px; color: #9BA3AF">{{e.endpoint}}</td>
+                <td style="padding: 14px 20px; color: #9BA3AF">{{e.attempts}}</td>
+                <td style="padding: 14px 20px; color: #9BA3AF; text-align: right">{{e.time}}</td>
+              </tr>
+            
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section id="features" style="max-width: 1240px; margin: 0 auto; padding: 0 32px 120px; display: flex; flex-direction: column; gap: 48px">
+    <div style="display: flex; flex-direction: column; gap: 14px; max-width: 640px">
+      <span style="font-family: 'JetBrains Mono', monospace; font-size: 14px; color: #C6FF3D">// what you get</span>
+      <h2 style="margin: 0; font-size: clamp(36px, 4vw, 56px); line-height: 1.05; font-weight: 700; letter-spacing: -1.5px">The boring parts of webhooks, done properly.</h2>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1px; background: #2A3038; border: 1px solid #2A3038; border-radius: 16px; overflow: hidden">
+      <sc-for list="{{features}}" as="f" hint-placeholder-count="6">
+        <div style="background: #0B0D10; padding: 32px; display: flex; flex-direction: column; gap: 14px">
+          <div style="width: 44px; height: 44px; border-radius: 10px; border: 1px solid #2A3038; display: flex; align-items: center; justify-content: center; color: #C6FF3D">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="{{f.icon}}"></path></svg>
+          </div>
+          <h3 style="margin: 0; font-size: 21px; font-weight: 700">{{f.title}}</h3>
+          <p style="margin: 0; font-size: 16px; line-height: 1.55; color: #9BA3AF">{{f.body}}</p>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <section id="code" style="max-width: 1240px; margin: 0 auto; padding: 0 32px 120px; display: flex; flex-wrap: wrap; align-items: center; gap: 56px">
+    <div style="flex: 1 1 380px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
+      <span style="font-family: 'JetBrains Mono', monospace; font-size: 14px; color: #C6FF3D">// five lines to ship</span>
+      <h2 style="margin: 0; font-size: clamp(36px, 4vw, 56px); line-height: 1.05; font-weight: 700; letter-spacing: -1.5px">Send once. We handle the rest.</h2>
+      <p style="margin: 0; font-size: 18px; line-height: 1.6; color: #9BA3AF">Hand Relay an event and a destination. Retries with backoff, signatures, timeouts and dead-letter queues are already switched on.</p>
+      <a href="#code" style="font-size: 17px; font-weight: 700; text-decoration: none; color: #C6FF3D">Read the quickstart →</a>
+    </div>
+    <div style="flex: 1 1 560px; min-width: 0; border: 1px solid #2A3038; border-radius: 16px; background: #12161B; overflow: hidden">
+      <div style="display: flex; gap: 4px; padding: 12px 16px; border-bottom: 1px solid #2A3038; font-family: 'JetBrains Mono', monospace; font-size: 13px">
+        <span style="padding: 6px 12px; border-radius: 6px; background: #1E2329">send.ts</span>
+        <span style="padding: 6px 12px; color: #9BA3AF">verify.ts</span>
+      </div>
+      <pre style="margin: 0; padding: 24px; font-family: 'JetBrains Mono', monospace; font-size: 15px; line-height: 1.8; overflow-x: auto; color: #E6E8EB"><span style="color: #C792EA">import</span> { Relay } <span style="color: #C792EA">from</span> <span style="color: #C6FF3D">'@relay/sdk'</span>
+
+<span style="color: #C792EA">const</span> relay = <span style="color: #C792EA">new</span> <span style="color: #82AAFF">Relay</span>(process.env.RELAY_KEY)
+
+<span style="color: #C792EA">await</span> relay.<span style="color: #82AAFF">send</span>({
+  event: <span style="color: #C6FF3D">'order.paid'</span>,
+  to: customer.webhookUrl,
+  data: { orderId, total },
+  retry: { max: <span style="color: #FFB020">8</span>, backoff: <span style="color: #C6FF3D">'exponential'</span> },
+})</pre>
+    </div>
+  </section>
+
+  <section id="pricing" style="max-width: 1240px; margin: 0 auto; padding: 0 32px 120px; display: flex; flex-direction: column; gap: 48px">
+    <div style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 14px">
+      <span style="font-family: 'JetBrains Mono', monospace; font-size: 14px; color: #C6FF3D">// pricing</span>
+      <h2 style="margin: 0; font-size: clamp(36px, 4vw, 56px); line-height: 1.05; font-weight: 700; letter-spacing: -1.5px">Pay for what you send.</h2>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px">
+      <sc-for list="{{plans}}" as="p" hint-placeholder-count="3">
+        <div style="{{p.box}}">
+          <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px">
+            <h3 style="margin: 0; font-size: 22px; font-weight: 700">{{p.name}}</h3>
+            <sc-if value="{{p.popular}}" hint-placeholder-val="{{false}}">
+              <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; padding: 5px 10px; border-radius: 999px; background: #C6FF3D; color: #0B0D10">Most popular</span>
+            </sc-if>
+          </div>
+          <div style="display: flex; align-items: baseline; gap: 6px">
+            <span style="font-size: 52px; font-weight: 700; letter-spacing: -2px">{{p.price}}</span>
+            <span style="color: #9BA3AF">{{p.per}}</span>
+          </div>
+          <p style="margin: 0; color: #9BA3AF; font-size: 16px; line-height: 1.5">{{p.blurb}}</p>
+          <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 12px; font-size: 15px">
+            <sc-for list="{{p.items}}" as="it" hint-placeholder-count="4">
+              <li style="display: flex; gap: 10px; align-items: flex-start"><span style="color: #C6FF3D" aria-hidden="true">✓</span><span>{{it}}</span></li>
+            </sc-for>
+          </ul>
+          <a href="#top" style="{{p.cta}}">{{p.action}}</a>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <section style="border-top: 1px solid #1E2329">
+    <div style="max-width: 1240px; margin: 0 auto; padding: 96px 32px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 24px">
+      <h2 style="margin: 0; font-size: clamp(40px, 5vw, 72px); line-height: 1; font-weight: 700; letter-spacing: -2.5px">Stop babysitting endpoints.</h2>
+      <a href="#pricing" style="min-height: 56px; padding: 0 30px; display: inline-flex; align-items: center; text-decoration: none; font-size: 18px; font-weight: 700; background: #C6FF3D; color: #0B0D10; border-radius: 10px">Get your API key</a>
+      <p style="margin: 0; font-size: 14px; color: #9BA3AF">Concept design for a fictional product.</p>
+    </div>
+  </section>
+</div>
+</script>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    var chip = function (c) {
+      var map = { ok: ['rgba(198,255,61,0.12)', '#C6FF3D'], retry: ['rgba(255,176,32,0.12)', '#FFB020'], fail: ['rgba(255,107,107,0.12)', '#FF8A8A'] };
+      var m = map[c];
+      return 'display: inline-block; min-width: 52px; text-align: center; padding: 4px 10px; border-radius: 6px; background: ' + m[0] + '; color: ' + m[1];
+    };
+    var events = [
+      { code: '200', s: 'ok', name: 'order.paid', endpoint: 'api.shopwell.io/hooks', attempts: '1', time: '14:02:41' },
+      { code: '503', s: 'retry', name: 'invoice.created', endpoint: 'billing.acme.dev/in', attempts: '3 / 8', time: '14:02:38' },
+      { code: '200', s: 'ok', name: 'user.signed_up', endpoint: 'crm.northwind.app/wh', attempts: '1', time: '14:02:35' },
+      { code: '200', s: 'ok', name: 'order.shipped', endpoint: 'api.shopwell.io/hooks', attempts: '2', time: '14:02:29' },
+      { code: '410', s: 'fail', name: 'subscription.renewed', endpoint: 'old.legacy-host.net/cb', attempts: '8 / 8', time: '14:01:57' },
+      { code: '200', s: 'ok', name: 'payment.refunded', endpoint: 'billing.acme.dev/in', attempts: '1', time: '14:01:50' }
+    ].map(function (e) { return Object.assign({}, e, { chip: chip(e.s) }); });
+    var features = [
+      { title: 'Automatic retries', body: 'Exponential backoff with jitter, tuned per endpoint, up to 72 hours.', icon: 'M21 12a9 9 0 1 1-3-6.7M21 4v5h-5' },
+      { title: 'Signed payloads', body: 'Every request carries an HMAC signature your receivers can verify in one call.', icon: 'M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z M9 12l2 2 4-4' },
+      { title: 'Replay anything', body: 'Fixed the bug? Re-send one event or a whole time range from the dashboard or CLI.', icon: 'M5 4l14 8-14 8z' },
+      { title: 'Fan-out', body: 'Route one event to many destinations with filters, without touching your code.', icon: 'M4 12h6M14 5h6M14 19h6M10 12l4-7M10 12l4 7' },
+      { title: 'Local tunnels', body: 'Point production-shaped traffic at localhost while you build.', icon: 'M4 17l6-6-6-6M12 19h8' },
+      { title: 'Alerts that matter', body: 'Get pinged when an endpoint degrades — not for every single blip.', icon: 'M6 8a6 6 0 1 1 12 0c0 7 3 9 3 9H3s3-2 3-9M10 21h4' }
+    ];
+    var ctaBase = 'min-height: 48px; display: flex; align-items: center; justify-content: center; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 16px; margin-top: auto; ';
+    var plans = [
+      { name: 'Hobby', price: '€0', per: '/ month', blurb: 'For side projects and trying things out.', items: ['10k events / month', '3 endpoints', '24h log retention', 'Community support'], action: 'Start free', popular: false },
+      { name: 'Team', price: '€49', per: '/ month', blurb: 'For products with real customers on the other end.', items: ['1M events / month', 'Unlimited endpoints', '30-day log retention', 'Replay & fan-out', 'Slack alerts'], action: 'Start 14-day trial', popular: true },
+      { name: 'Scale', price: 'Custom', per: '', blurb: 'For high volume, compliance and dedicated regions.', items: ['Volume pricing', 'SSO & audit logs', '99.99% uptime SLA', 'Named engineer'], action: 'Talk to us', popular: false }
+    ].map(function (p) {
+      return Object.assign({}, p, {
+        box: 'border-radius: 16px; padding: 32px; display: flex; flex-direction: column; gap: 20px; min-height: 520px; background: ' + (p.popular ? '#12161B' : '#0B0D10') + '; border: 1px solid ' + (p.popular ? '#C6FF3D' : '#2A3038'),
+        cta: ctaBase + (p.popular ? 'background: #C6FF3D; color: #0B0D10' : 'border: 1px solid #2A3038; color: #E6E8EB')
+      });
+    });
+    return { events: events, features: features, plans: plans };
+  }
+}
+</script>
+<script src="dc-mini.js"></script>
+<a href="index.html" class="u30-back" aria-label="Back to the Under 30 overview">← Under 30</a>
+<style>
+.u30-back{position:fixed;left:16px;bottom:16px;z-index:9999;display:inline-flex;align-items:center;min-height:44px;padding:0 18px;border-radius:999px;background:#141414;color:#f5f3ee!important;font:600 14px Inter,system-ui,sans-serif;text-decoration:none;box-shadow:0 8px 30px rgba(0,0,0,.25);border:1px solid rgba(255,255,255,.15)}
+.u30-back:hover{background:#ff5b2e;color:#141414!important}
+</style>
+</body>
+</html>

@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>APEX 77 Racing — team site and merch</title>
+<meta name="description" content="Under 30 — seven web design concepts by Rayan Alloush, each designed in under 30 minutes.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Archivo:wght@400;600;800&amp;display=swap">
+<style>
+body{margin:0;background:#0A0A0F}
+a{color:#FFFFFF}a:hover{color:#FFE600}
+*{box-sizing:border-box}
+@keyframes ap-streak{from{transform:translateX(0)}to{transform:translateX(-2200px)}}
+@keyframes ap-ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes ap-spin{to{transform:rotate(360deg)}}
+@keyframes ap-rumble{0%,100%{transform:translate(0,0)}25%{transform:translate(1px,-1px)}50%{transform:translate(-1px,1px)}75%{transform:translate(1px,1px)}}
+@keyframes ap-flash{0%,100%{opacity:1}50%{opacity:.25}}
+.ap-streak{animation:ap-streak linear infinite}
+.ap-ticker{animation:ap-ticker 22s linear infinite}
+.ap-spin{transform-box:fill-box;transform-origin:center;animation:ap-spin .35s linear infinite}
+.ap-rumble{animation:ap-rumble .18s linear infinite}
+.ap-flash{animation:ap-flash 1s steps(2) infinite}
+.ap-check{background:conic-gradient(#FFFFFF 25%,#0A0A0F 0 50%,#FFFFFF 0 75%,#0A0A0F 0) 0 0/24px 24px}
+.ap-prod{transition:transform .3s}
+.ap-prod:hover{transform:translateY(-6px) rotate(-.5deg)}
+@media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div id="dc-root"></div>
+<script type="text/x-dc-template" id="dc-template">
+<div style="font-family: Archivo, system-ui, sans-serif; background: #0A0A0F; color: #FFFFFF; width: 100%; overflow: hidden">
+
+  <div class="ap-check" aria-hidden="true" style="height: 24px"></div>
+
+  <header style="max-width: 1360px; margin: 0 auto; padding: 18px 40px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px">
+    <a href="#top" style="display: flex; align-items: center; gap: 10px; text-decoration: none; font-family: Anton, sans-serif; font-size: 30px; letter-spacing: 1px">
+      <span style="{{logoChip}}">77</span>APEX RACING
+    </a>
+    <nav aria-label="Main" style="display: flex; flex-wrap: wrap; gap: 30px; font-weight: 800; font-size: 15px; letter-spacing: 1px; text-transform: uppercase">
+      <a href="#livery" style="text-decoration: none">Livery lab</a>
+      <a href="#drivers" style="text-decoration: none">Drivers</a>
+      <a href="#merch" style="text-decoration: none">Merch</a>
+    </nav>
+    <a href="#merch" style="{{cartBtn}}">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 7h12l-1 13H7z"></path><path d="M9 7a3 3 0 0 1 6 0"></path></svg>
+      Cart ({{cartCount}})
+    </a>
+  </header>
+
+  <section id="top" style="position: relative; min-height: 820px; overflow: hidden; display: flex; flex-direction: column">
+    <div aria-hidden="true" style="position: absolute; inset: 0; pointer-events: none">
+      <sc-for list="{{streaks}}" as="s" hint-placeholder-count="0">
+        <span class="ap-streak" style="{{s.style}}"></span>
+      </sc-for>
+    </div>
+    <div aria-hidden="true" style="{{skewA}}"></div>
+    <div aria-hidden="true" style="{{skewB}}"></div>
+    <div aria-hidden="true" style="{{skewC}}"></div>
+
+    <div style="position: relative; max-width: 1360px; width: 100%; margin: 0 auto; padding: 48px 40px 0; display: flex; flex-direction: column; gap: 22px">
+      <p style="margin: 0; display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 14px; letter-spacing: 3px">
+        <span class="ap-flash" style="width: 10px; height: 10px; border-radius: 50%; background: #FF2E88"></span>
+        2027 SEASON · LIGHTS OUT SOON
+      </p>
+      <h1 style="margin: 0; font-family: Anton, sans-serif; font-size: clamp(80px, 13vw, 210px); line-height: 0.92; text-transform: uppercase; letter-spacing: -1px">
+        Built for<br>the <span style="{{heroAccent}}">last lap.</span>
+      </h1>
+      <div style="display: flex; flex-wrap: wrap; gap: 12px; padding-top: 8px">
+        <a href="#merch" style="{{ctaMain}}">Shop team gear</a>
+        <a href="#livery" style="min-height: 56px; padding: 0 28px; display: inline-flex; align-items: center; border: 3px solid #FFFFFF; text-decoration: none; font-weight: 800; font-size: 17px; text-transform: uppercase; letter-spacing: 1px; transform: skewX(-10deg)">Pick a livery</a>
+      </div>
+    </div>
+
+    <div class="ap-rumble" style="position: relative; width: min(1100px, 96%); margin: auto auto 40px; align-self: center">
+      <svg role="img" aria-label="APEX 77 race car in the {{livery.name}} livery" viewBox="0 0 900 260" style="width: 100%; height: auto; display: block">
+        <path d="M60 196 L20 196 M70 160 L10 160 M80 128 L30 128" stroke="{{livery.c1}}" stroke-width="5" stroke-linecap="round" opacity="0.7"></path>
+        <rect x="62" y="62" width="16" height="96" rx="3" fill="{{livery.c2}}"></rect>
+        <rect x="70" y="70" width="96" height="16" rx="4" fill="{{livery.c1}}"></rect>
+        <rect x="70" y="92" width="80" height="8" rx="3" fill="{{livery.c3}}"></rect>
+        <path d="M130 100 L160 150" stroke="#2A2A33" stroke-width="10"></path>
+        <path d="M90 178 L122 150 L300 140 L362 112 L432 104 L472 120 L560 128 L760 150 L846 166 L852 184 L90 194 Z" fill="{{livery.c1}}"></path>
+        <path d="M112 172 L846 174 L848 182 L104 186 Z" fill="{{livery.c2}}"></path>
+        <path d="M300 140 L560 128 L600 140 L320 150 Z" fill="{{livery.c3}}"></path>
+        <path d="M398 120 Q 446 78 506 120" fill="none" stroke="#2A2A33" stroke-width="8" stroke-linecap="round"></path>
+        <circle cx="455" cy="110" r="15" fill="{{livery.c3}}"></circle>
+        <rect x="446" y="104" width="20" height="6" rx="3" fill="#0A0A0F"></rect>
+        <text x="610" y="166" font-family="Anton, sans-serif" font-size="34" fill="{{livery.ink}}">77</text>
+        <rect x="780" y="190" width="100" height="10" rx="3" fill="{{livery.c2}}"></rect>
+        <rect x="864" y="168" width="12" height="36" rx="3" fill="{{livery.c3}}"></rect>
+        <rect x="0" y="236" width="900" height="3" fill="#FFFFFF" opacity="0.15"></rect>
+        <g>
+          <circle cx="200" cy="192" r="46" fill="#111116"></circle>
+          <circle cx="200" cy="192" r="46" fill="none" stroke="{{livery.c2}}" stroke-width="3" stroke-dasharray="10 14" class="ap-spin"></circle>
+          <circle cx="200" cy="192" r="22" fill="{{livery.c3}}"></circle>
+        </g>
+        <g>
+          <circle cx="706" cy="194" r="42" fill="#111116"></circle>
+          <circle cx="706" cy="194" r="42" fill="none" stroke="{{livery.c2}}" stroke-width="3" stroke-dasharray="10 14" class="ap-spin"></circle>
+          <circle cx="706" cy="194" r="20" fill="{{livery.c3}}"></circle>
+        </g>
+      </svg>
+    </div>
+  </section>
+
+  <div aria-hidden="true" style="{{tickerBand}}">
+    <div class="ap-ticker" style="display: flex; width: max-content; gap: 48px; padding: 18px 0; font-family: Anton, sans-serif; font-size: 34px; text-transform: uppercase; white-space: nowrap">
+      <span>P2 last weekend</span><span>★</span><span>Fastest lap: 1:31.402</span><span>★</span><span>New livery drop Friday</span><span>★</span><span>Fan zone opens at 10:00</span><span>★</span>
+      <span>P2 last weekend</span><span>★</span><span>Fastest lap: 1:31.402</span><span>★</span><span>New livery drop Friday</span><span>★</span><span>Fan zone opens at 10:00</span><span>★</span>
+    </div>
+  </div>
+
+  <section id="livery" style="max-width: 1360px; margin: 0 auto; padding: 110px 40px; display: flex; flex-wrap: wrap; align-items: center; gap: 56px">
+    <div style="flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 22px">
+      <span style="{{eyebrow}}">Livery lab</span>
+      <h2 style="margin: 0; font-family: Anton, sans-serif; font-size: clamp(52px, 6vw, 92px); line-height: 0.9; text-transform: uppercase">Paint the<br>whole grid.</h2>
+      <p style="margin: 0; font-size: 18px; line-height: 1.6; color: #C9C9D4">Four liveries, one for every kind of race weekend. Pick one and the whole site — car, buttons and merch — repaints to match.</p>
+      <div role="radiogroup" aria-label="Livery" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px">
+        <sc-for list="{{liveries}}" as="l" hint-placeholder-count="4">
+          <button role="radio" aria-checked="{{l.checked}}" onClick="{{l.pick}}" style="{{l.btn}}">
+            <span style="display: flex; gap: 4px" aria-hidden="true">
+              <span style="{{l.s1}}"></span><span style="{{l.s2}}"></span><span style="{{l.s3}}"></span>
+            </span>
+            <span>{{l.name}}</span>
+          </button>
+        </sc-for>
+      </div>
+    </div>
+    <div style="flex: 1 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 18px">
+      <div style="{{liveryStage}}">
+        <svg role="img" aria-label="Top-down view of the car in {{livery.name}}" viewBox="0 0 300 520" style="height: 460px; max-width: 100%">
+          <rect x="40" y="20" width="220" height="34" rx="6" fill="{{livery.c2}}"></rect>
+          <rect x="30" y="20" width="16" height="50" rx="4" fill="{{livery.c3}}"></rect>
+          <rect x="254" y="20" width="16" height="50" rx="4" fill="{{livery.c3}}"></rect>
+          <rect x="18" y="80" width="46" height="90" rx="14" fill="#111116"></rect>
+          <rect x="236" y="80" width="46" height="90" rx="14" fill="#111116"></rect>
+          <path d="M110 60 L190 60 L220 140 L230 300 L180 420 L170 480 L130 480 L120 420 L70 300 L80 140 Z" fill="{{livery.c1}}"></path>
+          <path d="M140 60 L160 60 L160 480 L140 480 Z" fill="{{livery.c2}}"></path>
+          <ellipse cx="150" cy="250" rx="26" ry="40" fill="#0A0A0F"></ellipse>
+          <circle cx="150" cy="246" r="16" fill="{{livery.c3}}"></circle>
+          <rect x="24" y="330" width="40" height="80" rx="12" fill="#111116"></rect>
+          <rect x="236" y="330" width="40" height="80" rx="12" fill="#111116"></rect>
+          <rect x="60" y="474" width="180" height="26" rx="6" fill="{{livery.c2}}"></rect>
+          <rect x="54" y="460" width="14" height="44" rx="4" fill="{{livery.c3}}"></rect>
+          <rect x="232" y="460" width="14" height="44" rx="4" fill="{{livery.c3}}"></rect>
+          <text x="150" y="180" text-anchor="middle" font-family="Anton, sans-serif" font-size="40" fill="{{livery.ink}}">77</text>
+        </svg>
+      </div>
+      <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 16px; flex-wrap: wrap">
+        <span style="font-family: Anton, sans-serif; font-size: 36px; text-transform: uppercase">{{livery.name}}</span>
+        <span style="font-size: 16px; color: #C9C9D4">{{livery.note}}</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="drivers" style="max-width: 1360px; margin: 0 auto; padding: 0 40px 110px; display: flex; flex-direction: column; gap: 40px">
+    <h2 style="margin: 0; font-family: Anton, sans-serif; font-size: clamp(52px, 6vw, 92px); line-height: 0.9; text-transform: uppercase">Meet the drivers</h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(420px, 100%), 1fr)); gap: 24px">
+      <sc-for list="{{drivers}}" as="d" hint-placeholder-count="2">
+        <article style="{{d.card}}">
+          <span aria-hidden="true" style="position: absolute; right: -10px; bottom: -60px; font-family: Anton, sans-serif; font-size: 320px; line-height: 1; opacity: 0.18">{{d.num}}</span>
+          <div style="position: relative; display: flex; flex-direction: column; gap: 6px">
+            <span style="font-weight: 800; letter-spacing: 2px; font-size: 14px">{{d.flag}}</span>
+            <h3 style="margin: 0; font-family: Anton, sans-serif; font-size: 64px; line-height: 0.9; text-transform: uppercase">{{d.first}}<br>{{d.last}}</h3>
+          </div>
+          <div style="position: relative; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px">
+            <sc-for list="{{d.stats}}" as="s" hint-placeholder-count="3">
+              <div style="display: flex; flex-direction: column; gap: 2px">
+                <span style="font-family: Anton, sans-serif; font-size: 44px; line-height: 1">{{s.v}}</span>
+                <span style="font-size: 13px; font-weight: 800; letter-spacing: 1.5px">{{s.k}}</span>
+              </div>
+            </sc-for>
+          </div>
+        </article>
+      </sc-for>
+    </div>
+  </section>
+
+  <section id="merch" style="background: #FFFFFF; color: #0A0A0F">
+    <div style="max-width: 1360px; margin: 0 auto; padding: 110px 40px; display: flex; flex-direction: column; gap: 44px">
+      <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 24px">
+        <div style="display: flex; flex-direction: column; gap: 12px">
+          <span style="{{eyebrowDark}}">Official team store</span>
+          <h2 style="margin: 0; font-family: Anton, sans-serif; font-size: clamp(52px, 6vw, 92px); line-height: 0.9; text-transform: uppercase">Wear the colors.</h2>
+        </div>
+        <p style="margin: 0; max-width: 380px; font-size: 18px; line-height: 1.55; color: #3A3A46">Every piece below is printed in the <strong>{{livery.name}}</strong> livery. Switch liveries above and the gear changes with it.</p>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 22px">
+        <sc-for list="{{products}}" as="p" hint-placeholder-count="4">
+          <article class="ap-prod" style="border: 3px solid #0A0A0F; padding: 20px; display: flex; flex-direction: column; gap: 16px; background: #FFFFFF">
+            <div style="{{p.stage}}">
+              <sc-if value="{{p.isCap}}" hint-placeholder-val="{{false}}">
+                <svg role="img" aria-label="Team cap" viewBox="0 0 200 160" style="width: 78%; height: auto"><path d="M30 100 C30 50 70 28 110 28 C150 28 175 55 175 100 Z" fill="{{livery.c1}}"></path><path d="M100 30 L110 100 L120 30" fill="{{livery.c2}}"></path><path d="M20 100 L190 100 C190 118 170 124 150 120 L40 112 C28 110 20 106 20 100 Z" fill="{{livery.c3}}"></path><text x="70" y="85" font-family="Anton, sans-serif" font-size="30" fill="{{livery.ink}}">77</text></svg>
+              </sc-if>
+              <sc-if value="{{p.isHoodie}}" hint-placeholder-val="{{false}}">
+                <svg role="img" aria-label="Livery hoodie" viewBox="0 0 200 200" style="width: 78%; height: auto"><path d="M70 30 C80 50 120 50 130 30 L170 50 L190 120 L160 128 L156 90 L156 185 L44 185 L44 90 L40 128 L10 120 L30 50 Z" fill="{{livery.c1}}"></path><path d="M44 120 L156 110 L156 128 L44 138 Z" fill="{{livery.c2}}"></path><path d="M75 30 C82 60 118 60 125 30" fill="none" stroke="{{livery.c3}}" stroke-width="6"></path><text x="82" y="100" font-family="Anton, sans-serif" font-size="30" fill="{{livery.ink}}">77</text></svg>
+              </sc-if>
+              <sc-if value="{{p.isTee}}" hint-placeholder-val="{{false}}">
+                <svg role="img" aria-label="Pit crew t-shirt" viewBox="0 0 200 200" style="width: 78%; height: auto"><path d="M70 30 C80 45 120 45 130 30 L180 52 L165 92 L150 86 L150 180 L50 180 L50 86 L35 92 L20 52 Z" fill="#0A0A0F"></path><path d="M50 60 L150 100 L150 116 L50 76 Z" fill="{{livery.c1}}"></path><path d="M50 82 L150 122 L150 132 L50 92 Z" fill="{{livery.c2}}"></path><text x="72" y="160" font-family="Anton, sans-serif" font-size="22" fill="{{livery.c3}}">PIT CREW</text></svg>
+              </sc-if>
+              <sc-if value="{{p.isModel}}" hint-placeholder-val="{{false}}">
+                <svg role="img" aria-label="1:18 scale model car" viewBox="0 0 220 120" style="width: 86%; height: auto"><rect x="30" y="96" width="170" height="8" rx="4" fill="#0A0A0F" opacity="0.15"></rect><rect x="20" y="30" width="8" height="40" fill="{{livery.c2}}"></rect><rect x="22" y="32" width="40" height="8" fill="{{livery.c1}}"></rect><path d="M28 80 L40 66 L90 62 L104 50 L124 48 L134 56 L200 72 L204 82 L28 86 Z" fill="{{livery.c1}}"></path><path d="M36 78 L202 78 L202 82 L34 84 Z" fill="{{livery.c2}}"></path><circle cx="58" cy="86" r="14" fill="#111116"></circle><circle cx="58" cy="86" r="6" fill="{{livery.c3}}"></circle><circle cx="172" cy="86" r="13" fill="#111116"></circle><circle cx="172" cy="86" r="6" fill="{{livery.c3}}"></circle><circle cx="118" cy="50" r="5" fill="{{livery.c3}}"></circle></svg>
+              </sc-if>
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px">
+              <h3 style="margin: 0; font-family: Anton, sans-serif; font-size: 26px; text-transform: uppercase">{{p.name}}</h3>
+              <span style="font-family: Anton, sans-serif; font-size: 24px">{{p.price}}</span>
+            </div>
+            <sc-if value="{{p.hasSizes}}" hint-placeholder-val="{{true}}">
+              <div role="radiogroup" aria-label="Size for {{p.name}}" style="display: flex; gap: 6px">
+                <sc-for list="{{p.sizes}}" as="sz" hint-placeholder-count="4">
+                  <button role="radio" aria-checked="{{sz.checked}}" onClick="{{sz.pick}}" style="{{sz.style}}">{{sz.label}}</button>
+                </sc-for>
+              </div>
+            </sc-if>
+            <sc-if value="{{p.noSizes}}" hint-placeholder-val="{{false}}">
+              <span style="min-height: 44px; display: flex; align-items: center; font-size: 14px; font-weight: 600; color: #3A3A46">Die-cast metal · numbered edition</span>
+            </sc-if>
+            <button onClick="{{p.add}}" style="{{p.addStyle}}">{{p.addLabel}}</button>
+          </article>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <footer style="position: relative">
+    <div class="ap-check" aria-hidden="true" style="height: 24px"></div>
+    <div style="max-width: 1360px; margin: 0 auto; padding: 56px 40px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 24px">
+      <span style="font-family: Anton, sans-serif; font-size: clamp(56px, 8vw, 120px); line-height: 0.9; text-transform: uppercase">See you<br>at the <span style="{{heroAccent}}">flag.</span></span>
+      <span style="font-size: 14px; color: #A9A9B6">Concept design for a fictional racing team.</span>
+    </div>
+  </footer>
+</div>
+</script>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { livery: 0, sizes: {}, cart: 0, added: {} };
+  }
+  componentWillUnmount() {
+    clearTimeout(this.addedTimer);
+  }
+  renderVals() {
+    var self = this;
+    var L = [
+      { name: 'Neon Riot', c1: '#FF2E88', c2: '#FFE600', c3: '#00D1FF', ink: '#0A0A0F', note: 'Night races and city circuits.' },
+      { name: 'Solar Wave', c1: '#FF6B00', c2: '#7B2CFF', c3: '#FFE600', ink: '#0A0A0F', note: 'Desert heat, sunset starts.' },
+      { name: 'Ice Storm', c1: '#00D1FF', c2: '#FFFFFF', c3: '#FF2E88', ink: '#0A0A0F', note: 'Cold tracks, clean air.' },
+      { name: 'Toxic Lime', c1: '#B6FF00', c2: '#7B2CFF', c3: '#FF2E88', ink: '#0A0A0F', note: 'Home race special edition.' }
+    ];
+    var li = this.state.livery;
+    var lv = L[li];
+    var liveries = L.map(function (l, k) {
+      var on = k === li;
+      var sw = function (c) { return 'width: 16px; height: 28px; transform: skewX(-12deg); background: ' + c; };
+      return {
+        name: l.name,
+        checked: on ? 'true' : 'false',
+        pick: function () { self.setState({ livery: k }); },
+        s1: sw(l.c1), s2: sw(l.c2), s3: sw(l.c3),
+        btn: 'min-height: 64px; padding: 0 18px; display: flex; align-items: center; gap: 14px; cursor: pointer; text-align: left; font: 800 16px Archivo, sans-serif; text-transform: uppercase; letter-spacing: 1px; color: #FFFFFF; background: ' + (on ? '#1C1C24' : 'transparent') + '; border: 3px solid ' + (on ? l.c1 : '#2E2E38') + '; transition: border-color .2s'
+      };
+    });
+    var streaks = [];
+    var cols = [lv.c1, lv.c2, lv.c3, '#FFFFFF'];
+    for (var i = 0; i < 26; i++) {
+      var r = function (n) { var x = Math.sin(n * 12.9898) * 43758.5453; return x - Math.floor(x); };
+      streaks.push({ style: 'position: absolute; left: 100%; top: ' + (r(i + 3) * 100).toFixed(1) + '%; width: ' + Math.round(120 + r(i + 30) * 380) + 'px; height: ' + (r(i + 60) > 0.7 ? 4 : 2) + 'px; border-radius: 4px; background: ' + cols[i % 4] + '; opacity: ' + (0.25 + r(i + 90) * 0.5).toFixed(2) + '; animation-duration: ' + (0.9 + r(i + 120) * 1.6).toFixed(2) + 's; animation-delay: -' + (r(i + 150) * 2).toFixed(2) + 's' });
+    }
+    var sizeList = ['S', 'M', 'L', 'XL'];
+    var P = [
+      { kind: 'cap', name: 'Team cap', price: '€35' },
+      { kind: 'hoodie', name: 'Livery hoodie', price: '€85' },
+      { kind: 'tee', name: 'Pit crew tee', price: '€40' },
+      { kind: 'model', name: '1:18 Model car', price: '€120' }
+    ];
+    var products = P.map(function (p, k) {
+      var hasSizes = p.kind === 'hoodie' || p.kind === 'tee';
+      var chosen = self.state.sizes[k] || 'M';
+      var added = !!self.state.added[k];
+      return {
+        name: p.name, price: p.price,
+        isCap: p.kind === 'cap', isHoodie: p.kind === 'hoodie', isTee: p.kind === 'tee', isModel: p.kind === 'model',
+        hasSizes: hasSizes, noSizes: !hasSizes,
+        stage: 'height: 230px; display: flex; align-items: center; justify-content: center; background: ' + (k % 2 === 0 ? '#F2F2F5' : '#0A0A0F') + '; position: relative; overflow: hidden',
+        sizes: sizeList.map(function (s) {
+          var on = s === chosen;
+          return {
+            label: s,
+            checked: on ? 'true' : 'false',
+            pick: function () { var o = Object.assign({}, self.state.sizes); o[k] = s; self.setState({ sizes: o }); },
+            style: 'min-width: 48px; min-height: 44px; cursor: pointer; font: 800 15px Archivo, sans-serif; border: 2px solid #0A0A0F; background: ' + (on ? '#0A0A0F' : '#FFFFFF') + '; color: ' + (on ? '#FFFFFF' : '#0A0A0F')
+          };
+        }),
+        addLabel: added ? 'Added to cart ✓' : 'Add to cart',
+        add: function () {
+          var a = {}; a[k] = true;
+          self.setState({ cart: self.state.cart + 1, added: a });
+          clearTimeout(self.addedTimer);
+          self.addedTimer = setTimeout(function () { self.setState({ added: {} }); }, 1400);
+        },
+        addStyle: 'min-height: 52px; cursor: pointer; border: none; font: 800 16px Archivo, sans-serif; text-transform: uppercase; letter-spacing: 1px; transition: background .2s; background: ' + (added ? '#0A0A0F' : lv.c1) + '; color: ' + (added ? '#FFFFFF' : lv.ink)
+      };
+    });
+    var driverCard = function (bg) { return 'position: relative; overflow: hidden; min-height: 380px; padding: 36px; display: flex; flex-direction: column; justify-content: space-between; gap: 28px; color: #0A0A0F; background: ' + bg + '; clip-path: polygon(0 0, 100% 0, 100% calc(100% - 40px), calc(100% - 40px) 100%, 0 100%)'; };
+    return {
+      livery: lv,
+      liveries: liveries,
+      streaks: streaks,
+      products: products,
+      cartCount: this.state.cart,
+      logoChip: 'display: inline-flex; align-items: center; justify-content: center; width: 52px; height: 40px; transform: skewX(-12deg); background: ' + lv.c1 + '; color: ' + lv.ink + '; transition: background .3s',
+      cartBtn: 'min-height: 46px; padding: 0 20px; display: inline-flex; align-items: center; gap: 8px; text-decoration: none; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; font-size: 14px; color: ' + lv.ink + '; background: ' + lv.c2 + '; transform: skewX(-10deg); transition: background .3s',
+      heroAccent: 'color: ' + lv.c1 + '; transition: color .3s',
+      ctaMain: 'min-height: 56px; padding: 0 30px; display: inline-flex; align-items: center; text-decoration: none; font-weight: 800; font-size: 17px; text-transform: uppercase; letter-spacing: 1px; transform: skewX(-10deg); color: ' + lv.ink + '; background: ' + lv.c1 + '; transition: background .3s',
+      skewA: 'position: absolute; right: -10%; top: 12%; width: 55%; height: 90px; transform: skewX(-24deg); background: ' + lv.c1 + '; opacity: 0.9; transition: background .4s',
+      skewB: 'position: absolute; right: -14%; top: calc(12% + 110px); width: 42%; height: 46px; transform: skewX(-24deg); background: ' + lv.c2 + '; transition: background .4s',
+      skewC: 'position: absolute; right: -18%; top: calc(12% + 176px); width: 30%; height: 22px; transform: skewX(-24deg); background: ' + lv.c3 + '; transition: background .4s',
+      tickerBand: 'overflow: hidden; color: ' + lv.ink + '; background: ' + lv.c2 + '; transform: rotate(-1.2deg); margin: 0 -20px; transition: background .3s',
+      eyebrow: 'align-self: flex-start; padding: 6px 14px; font-weight: 800; font-size: 14px; letter-spacing: 2px; text-transform: uppercase; transform: skewX(-10deg); color: ' + lv.ink + '; background: ' + lv.c3,
+      eyebrowDark: 'align-self: flex-start; padding: 6px 14px; font-weight: 800; font-size: 14px; letter-spacing: 2px; text-transform: uppercase; transform: skewX(-10deg); color: #FFFFFF; background: #0A0A0F',
+      liveryStage: 'position: relative; display: flex; justify-content: center; padding: 28px; border: 3px solid ' + lv.c1 + '; background: repeating-linear-gradient(-45deg, #111116 0 18px, #16161D 18px 36px); transition: border-color .3s',
+      drivers: [
+        { num: '77', flag: 'NO. 77 · TEAM LEAD', first: 'Nova', last: 'Reyes', card: driverCard(lv.c1), stats: [{ v: '6', k: 'WINS' }, { v: '19', k: 'PODIUMS' }, { v: '4', k: 'POLES' }] },
+        { num: '21', flag: 'NO. 21 · ROOKIE', first: 'Kai', last: 'Lindqvist', card: driverCard(lv.c3), stats: [{ v: '1', k: 'WIN' }, { v: '5', k: 'PODIUMS' }, { v: '2', k: 'FASTEST LAPS' }] }
+      ]
+    };
+  }
+}
+</script>
+<script src="dc-mini.js"></script>
+<a href="index.html" class="u30-back" aria-label="Back to the Under 30 overview">← Under 30</a>
+<style>
+.u30-back{position:fixed;left:16px;bottom:16px;z-index:9999;display:inline-flex;align-items:center;min-height:44px;padding:0 18px;border-radius:999px;background:#141414;color:#f5f3ee!important;font:600 14px Inter,system-ui,sans-serif;text-decoration:none;box-shadow:0 8px 30px rgba(0,0,0,.25);border:1px solid rgba(255,255,255,.15)}
+.u30-back:hover{background:#ff5b2e;color:#141414!important}
+</style>
+</body>
+</html>

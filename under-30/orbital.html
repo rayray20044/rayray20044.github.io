@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Orbital — a week in low Earth orbit</title>
+<meta name="description" content="Under 30 — seven web design concepts by Rayan Alloush, each designed in under 30 minutes.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;800&amp;family=Inter:wght@400;500;600&amp;family=Space+Mono&amp;display=swap">
+<style>
+body{margin:0;background:#05060F}
+a{color:#EDEFF7}a:hover{color:#FF8A3D}
+*{box-sizing:border-box}
+@keyframes ob-twinkle{0%,100%{opacity:.15}50%{opacity:1}}
+@keyframes ob-spin{to{transform:rotate(360deg)}}
+@keyframes ob-clouds{from{background-position:0 0}to{background-position:-600px 0}}
+@keyframes ob-rise{0%,100%{box-shadow:0 -30px 120px 20px rgba(255,138,61,.35),0 -6px 40px rgba(120,170,255,.7)}50%{box-shadow:0 -40px 160px 30px rgba(255,138,61,.5),0 -8px 50px rgba(120,170,255,.9)}}
+@keyframes ob-dash{to{background-position:200px 0}}
+.ob-spin{animation:ob-spin 16s linear infinite}
+.ob-spin-slow{animation:ob-spin 40s linear infinite reverse}
+.ob-clouds{animation:ob-clouds 30s linear infinite}
+.ob-horizon{animation:ob-rise 6s ease-in-out infinite}
+.ob-dash{background-image:linear-gradient(90deg,#FF8A3D 50%,transparent 50%);background-size:20px 2px;animation:ob-dash 6s linear infinite}
+.ob-card{transition:transform .35s,border-color .35s,box-shadow .35s}
+.ob-card:hover{transform:translateY(-8px);border-color:#FF8A3D;box-shadow:0 30px 80px rgba(255,138,61,.18)}
+@media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div id="dc-root"></div>
+<script type="text/x-dc-template" id="dc-template">
+<div style="font-family: Inter, system-ui, sans-serif; background: #05060F; color: #EDEFF7; width: 100%; overflow: hidden">
+
+  <section id="top" style="position: relative; min-height: 940px; display: flex; flex-direction: column; overflow: hidden">
+    <div aria-hidden="true" style="position: absolute; inset: 0">
+      <sc-for list="{{stars}}" as="s" hint-placeholder-count="0">
+        <span style="{{s.style}}"></span>
+      </sc-for>
+    </div>
+
+    <header style="position: relative; z-index: 2; width: 100%; max-width: 1360px; margin: 0 auto; padding: 26px 40px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px">
+      <a href="#top" style="display: flex; align-items: center; gap: 12px; text-decoration: none; font-family: Unbounded, sans-serif; font-weight: 800; font-size: 20px; letter-spacing: 1px">
+        <svg width="30" height="30" viewBox="0 0 30 30" fill="none" aria-hidden="true"><circle cx="15" cy="15" r="6" fill="#FF8A3D"></circle><ellipse cx="15" cy="15" rx="13" ry="5" stroke="#EDEFF7" stroke-width="1.5" transform="rotate(-25 15 15)"></ellipse></svg>
+        ORBITAL
+      </a>
+      <nav aria-label="Main" style="display: flex; flex-wrap: wrap; gap: 32px; font-size: 15px; font-weight: 500">
+        <a href="#journey" style="text-decoration: none">The journey</a>
+        <a href="#station" style="text-decoration: none">Halo station</a>
+        <a href="#cabins" style="text-decoration: none">Cabins</a>
+      </nav>
+      <a href="#waitlist" style="min-height: 46px; padding: 0 22px; display: inline-flex; align-items: center; border-radius: 999px; background: #EDEFF7; color: #05060F; text-decoration: none; font-weight: 600; font-size: 15px">Join the waitlist</a>
+    </header>
+
+    <div style="position: relative; z-index: 2; max-width: 1100px; margin: 0 auto; padding: 72px 24px 0; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 28px">
+      <p style="margin: 0; font-family: 'Space Mono', monospace; font-size: 14px; letter-spacing: 4px; color: #FF8A3D">MISSION 001 · NOW BOARDING</p>
+      <h1 style="margin: 0; font-family: Unbounded, sans-serif; font-size: clamp(48px, 7.4vw, 112px); font-weight: 800; line-height: 0.98; letter-spacing: -3px">Your window seat is 400&nbsp;km&nbsp;up.</h1>
+      <p style="margin: 0; max-width: 600px; font-size: 20px; line-height: 1.55; color: #B4B9CF">Six nights aboard Halo, a private station circling Earth every 92 minutes. Sixteen sunrises a day. One view that changes everything.</p>
+      <div role="timer" aria-label="Countdown to the first launch" style="display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; padding-top: 8px">
+        <sc-for list="{{countdown}}" as="c" hint-placeholder-count="4">
+          <div style="min-width: 108px; padding: 18px 14px; border: 1px solid rgba(237,239,247,0.18); border-radius: 18px; background: rgba(5,6,15,0.55); backdrop-filter: blur(8px); display: flex; flex-direction: column; gap: 6px">
+            <span style="font-family: Unbounded, sans-serif; font-size: 40px; font-weight: 600; line-height: 1">{{c.value}}</span>
+            <span style="font-family: 'Space Mono', monospace; font-size: 12px; letter-spacing: 2px; color: #9AA0B8">{{c.label}}</span>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+
+    <div aria-hidden="true" class="ob-horizon" style="position: absolute; left: 50%; bottom: -2140px; width: 2600px; height: 2600px; margin-left: -1300px; border-radius: 50%; background: radial-gradient(circle at 50% 0%, #2C5BD6 0%, #0E1C4A 18%, #070A1C 40%); overflow: hidden">
+      <div class="ob-clouds" style="position: absolute; inset: 0; opacity: 0.25; background-image: repeating-linear-gradient(100deg, transparent 0 60px, rgba(255,255,255,0.5) 60px 64px, transparent 64px 140px, rgba(255,255,255,0.3) 140px 150px); background-size: 600px 100%"></div>
+    </div>
+  </section>
+
+  <section id="journey" style="max-width: 1360px; margin: 0 auto; padding: 120px 40px; display: flex; flex-direction: column; gap: 64px">
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 24px">
+      <h2 style="margin: 0; font-family: Unbounded, sans-serif; font-size: clamp(36px, 4.4vw, 64px); font-weight: 800; letter-spacing: -2px; line-height: 1">The journey,<br>minute by minute.</h2>
+      <p style="margin: 0; max-width: 400px; font-size: 18px; line-height: 1.55; color: #B4B9CF">Three months of training, then seven days you'll talk about for the rest of your life.</p>
+    </div>
+    <div style="position: relative">
+      <div aria-hidden="true" class="ob-dash" style="position: absolute; left: 0; right: 0; top: 11px; height: 2px"></div>
+      <ol style="position: relative; margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 32px">
+        <sc-for list="{{steps}}" as="s" hint-placeholder-count="5">
+          <li style="display: flex; flex-direction: column; gap: 14px">
+            <span aria-hidden="true" style="width: 24px; height: 24px; border-radius: 50%; background: #05060F; border: 2px solid #FF8A3D; box-shadow: 0 0 20px rgba(255,138,61,0.7)"></span>
+            <span style="font-family: 'Space Mono', monospace; font-size: 14px; color: #FF8A3D">{{s.t}}</span>
+            <h3 style="margin: 0; font-family: Unbounded, sans-serif; font-size: 22px; font-weight: 600">{{s.title}}</h3>
+            <p style="margin: 0; font-size: 16px; line-height: 1.55; color: #B4B9CF">{{s.body}}</p>
+          </li>
+        </sc-for>
+      </ol>
+    </div>
+  </section>
+
+  <section id="station" style="max-width: 1360px; margin: 0 auto; padding: 40px 40px 120px; display: flex; flex-wrap: wrap; align-items: center; gap: 64px">
+    <div style="flex: 1 1 520px; min-width: 0; display: flex; justify-content: center">
+      <div role="img" aria-label="Halo station orbiting Earth" style="position: relative; width: min(560px, 100%); aspect-ratio: 1">
+        <div aria-hidden="true" class="ob-spin-slow" style="position: absolute; inset: 0; border-radius: 50%; border: 1px dashed rgba(237,239,247,0.18)"></div>
+        <div style="position: absolute; inset: 27%; border-radius: 50%; overflow: hidden; background: radial-gradient(circle at 35% 30%, #9BCBFF 0%, #2F5FD0 32%, #0E1C4A 68%, #05060F 100%); box-shadow: 0 0 90px rgba(80,140,255,0.45), inset -30px -20px 60px rgba(0,0,0,0.6)">
+          <div class="ob-clouds" style="position: absolute; inset: 0; opacity: 0.35; background-image: repeating-linear-gradient(170deg, transparent 0 22px, rgba(255,255,255,0.55) 22px 26px, transparent 26px 50px); background-size: 600px 100%"></div>
+        </div>
+        <div style="position: absolute; inset: 6%; transform: rotateX(72deg) rotateZ(-18deg)">
+          <div style="position: absolute; inset: 0; border-radius: 50%; border: 1.5px solid rgba(255,138,61,0.7); box-shadow: 0 0 24px rgba(255,138,61,0.35)"></div>
+          <div class="ob-spin" style="position: absolute; inset: 0">
+            <div style="position: absolute; top: -9px; left: 50%; margin-left: -9px; width: 18px; height: 18px; border-radius: 50%; background: #FF8A3D; box-shadow: 0 0 24px 6px rgba(255,138,61,0.8)"></div>
+          </div>
+        </div>
+        <div style="position: absolute; right: 0; top: 12%; padding: 10px 14px; border: 1px solid rgba(237,239,247,0.2); border-radius: 12px; background: rgba(5,6,15,0.7); font-family: 'Space Mono', monospace; font-size: 12px; line-height: 1.6; color: #B4B9CF">
+          ALT 408 km<br>VEL 7.66 km/s<br>PERIOD 92 min
+        </div>
+      </div>
+    </div>
+    <div style="flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 24px">
+      <span style="font-family: 'Space Mono', monospace; font-size: 14px; letter-spacing: 3px; color: #FF8A3D">HALO STATION</span>
+      <h2 style="margin: 0; font-family: Unbounded, sans-serif; font-size: clamp(36px, 4.4vw, 64px); font-weight: 800; letter-spacing: -2px; line-height: 1">A hotel with Earth as the wallpaper.</h2>
+      <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column">
+        <sc-for list="{{perks}}" as="p" hint-placeholder-count="4">
+          <li style="display: flex; justify-content: space-between; gap: 20px; padding: 18px 0; border-top: 1px solid rgba(237,239,247,0.14); font-size: 17px">
+            <span>{{p.a}}</span><span style="color: #9AA0B8; text-align: right">{{p.b}}</span>
+          </li>
+        </sc-for>
+      </ul>
+    </div>
+  </section>
+
+  <section id="cabins" style="max-width: 1360px; margin: 0 auto; padding: 0 40px 120px; display: flex; flex-direction: column; gap: 48px">
+    <h2 style="margin: 0; font-family: Unbounded, sans-serif; font-size: clamp(36px, 4.4vw, 64px); font-weight: 800; letter-spacing: -2px; line-height: 1">Choose your cabin.</h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px">
+      <sc-for list="{{cabins}}" as="c" hint-placeholder-count="3">
+        <article class="ob-card" style="border: 1px solid rgba(237,239,247,0.16); border-radius: 28px; padding: 36px; background: #0A0C1A; display: flex; flex-direction: column; gap: 18px; min-height: 420px">
+          <span style="font-family: 'Space Mono', monospace; font-size: 13px; letter-spacing: 2px; color: #FF8A3D">{{c.tag}}</span>
+          <h3 style="margin: 0; font-family: Unbounded, sans-serif; font-size: 30px; font-weight: 600">{{c.name}}</h3>
+          <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #B4B9CF">{{c.body}}</p>
+          <div style="margin-top: auto; display: flex; justify-content: space-between; align-items: center; gap: 12px; padding-top: 20px; border-top: 1px solid rgba(237,239,247,0.14)">
+            <span style="font-family: Unbounded, sans-serif; font-size: 18px">[Price]</span>
+            <a href="#waitlist" style="font-weight: 600; text-decoration: none; color: #FF8A3D">Reserve →</a>
+          </div>
+        </article>
+      </sc-for>
+    </div>
+  </section>
+
+  <section id="waitlist" style="position: relative; border-top: 1px solid rgba(237,239,247,0.12)">
+    <div style="max-width: 900px; margin: 0 auto; padding: 120px 24px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 28px">
+      <h2 style="margin: 0; font-family: Unbounded, sans-serif; font-size: clamp(40px, 5.4vw, 80px); font-weight: 800; letter-spacing: -2.5px; line-height: 1">Look back at us<br>from <span style="color: #FF8A3D">up there.</span></h2>
+      <form style="width: 100%; max-width: 560px; display: flex; flex-direction: column; gap: 10px; text-align: left">
+        <label for="ob-email" style="font-family: 'Space Mono', monospace; font-size: 13px; letter-spacing: 2px; color: #B4B9CF">EMAIL ADDRESS</label>
+        <div style="display: flex; flex-wrap: wrap; gap: 10px">
+          <input id="ob-email" type="email" placeholder="you@example.com" style="flex: 1 1 260px; min-width: 0; min-height: 58px; padding: 0 22px; border-radius: 999px; border: 1px solid rgba(237,239,247,0.3); background: #0A0C1A; color: #EDEFF7; font: 400 17px Inter, sans-serif">
+          <button type="button" style="min-height: 58px; padding: 0 30px; border-radius: 999px; border: none; background: #FF8A3D; color: #05060F; font: 600 17px Inter, sans-serif; cursor: pointer">Join the waitlist</button>
+        </div>
+      </form>
+      <p style="margin: 0; font-size: 14px; color: #9AA0B8">Concept design for a fictional company.</p>
+    </div>
+  </section>
+</div>
+</script>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { now: Date.now() };
+  }
+  componentDidMount() {
+    var self = this;
+    this.timer = setInterval(function () { self.setState({ now: Date.now() }); }, 1000);
+  }
+  componentWillUnmount() {
+    clearInterval(this.timer);
+  }
+  renderVals() {
+    var r = function (n) { var x = Math.sin(n * 12.9898) * 43758.5453; return x - Math.floor(x); };
+    var stars = [];
+    for (var i = 1; i <= 110; i++) {
+      var size = r(i + 200) > 0.85 ? 3 : (r(i + 200) > 0.5 ? 2 : 1);
+      stars.push({ style: 'position: absolute; left: ' + (r(i) * 100).toFixed(2) + '%; top: ' + (r(i + 500) * 70).toFixed(2) + '%; width: ' + size + 'px; height: ' + size + 'px; border-radius: 50%; background: #FFFFFF; animation: ob-twinkle ' + (2 + r(i + 900) * 4).toFixed(2) + 's ease-in-out ' + (r(i + 1300) * 4).toFixed(2) + 's infinite' });
+    }
+    var target = Date.UTC(2027, 2, 14, 9, 0, 0);
+    var diff = Math.max(0, Math.floor((target - this.state.now) / 1000));
+    var pad = function (n) { return n < 10 ? '0' + n : String(n); };
+    var countdown = [
+      { value: String(Math.floor(diff / 86400)), label: 'DAYS' },
+      { value: pad(Math.floor(diff % 86400 / 3600)), label: 'HOURS' },
+      { value: pad(Math.floor(diff % 3600 / 60)), label: 'MIN' },
+      { value: pad(diff % 60), label: 'SEC' }
+    ];
+    return {
+      stars: stars,
+      countdown: countdown,
+      steps: [
+        { t: 'T–90 DAYS', title: 'Training', body: 'Centrifuge runs, zero-g flights and a crash course in floating gracefully.' },
+        { t: 'T+0', title: 'Lift-off', body: 'Strapped in, 3g on your chest, the sky turning from blue to black.' },
+        { t: 'T+9 MIN', title: 'Orbit', body: 'Engines cut. Your pen drifts off the armrest. Welcome to weightlessness.' },
+        { t: 'T+6 H', title: 'Dock at Halo', body: 'A soft clunk, a hatch opens, and your cabin window fills with Earth.' },
+        { t: 'T+7 DAYS', title: 'Splashdown', body: 'A fiery re-entry and a parachute ride home to the ocean.' }
+      ],
+      perks: [
+        { a: 'Panoramic cupola', b: '7 windows, 360° view' },
+        { a: 'Private sleep pods', b: 'Earth-facing portholes' },
+        { a: 'Chef-designed menu', b: 'Yes, even the coffee' },
+        { a: 'Live link home', b: 'Video call from orbit' }
+      ],
+      cabins: [
+        { tag: 'SOLO', name: 'Window', body: 'A private pod with its own porthole and a reserved hour in the cupola every orbit day.' },
+        { tag: 'DUO', name: 'Horizon', body: 'A double cabin for two travellers, with a wider window facing the planet’s edge.' },
+        { tag: 'SUITE', name: 'Zenith', body: 'The top module: a curved glass wall, a guided spacewalk preview and a dedicated crew host.' }
+      ]
+    };
+  }
+}
+</script>
+<script src="dc-mini.js"></script>
+<a href="index.html" class="u30-back" aria-label="Back to the Under 30 overview">← Under 30</a>
+<style>
+.u30-back{position:fixed;left:16px;bottom:16px;z-index:9999;display:inline-flex;align-items:center;min-height:44px;padding:0 18px;border-radius:999px;background:#141414;color:#f5f3ee!important;font:600 14px Inter,system-ui,sans-serif;text-decoration:none;box-shadow:0 8px 30px rgba(0,0,0,.25);border:1px solid rgba(255,255,255,.15)}
+.u30-back:hover{background:#ff5b2e;color:#141414!important}
+</style>
+</body>
+</html>

@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rayan Alloush — UX/UI Designer & Frontend Developer in Berlin</title>
+    <meta name="description" content="Rayan Alloush is a UX/UI designer and frontend developer in Berlin. He designs in Figma and ProtoPie and builds in HTML, CSS, JavaScript, React and Flutter.">
+    <meta name="theme-color" content="#f5f3ee">
+
+    <!-- Open Graph (link previews on LinkedIn, WhatsApp, Slack…) -->
+    <meta property="og:title" content="Rayan Alloush — UX/UI Designer & Frontend Developer">
+    <meta property="og:description" content="I design interfaces people enjoy, and build them in code. Portfolio of Rayan Alloush, Berlin.">
+    <meta property="og:image" content="https://rayray20044.github.io/Rayanalloush-portfolio/assets/og-waves.jpg">
+    <meta property="og:url" content="https://rayray20044.github.io/Rayanalloush-portfolio/">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='16' fill='%23141414'/><text x='50%' y='54%' dominant-baseline='middle' text-anchor='middle' font-family='Arial,sans-serif' font-weight='700' font-size='28' fill='%23ff5b2e'>RA</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600&family=Space+Grotesk:wght@700&family=Inter+Tight:wght@700&family=Chakra+Petch:wght@700&family=Unbounded:wght@800&family=Fraunces:ital,opsz,wght@1,9..144,600&family=Anton&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<a class="skip-link" href="#work">Skip to projects</a>
+
+<!-- Navigation -->
+<nav class="nav" id="nav">
+    <div class="nav-inner container">
+        <a href="#top" class="brand" aria-label="Rayan Alloush — back to top">
+            <span class="brand-mark">RA</span>
+            <span class="brand-name">Rayan Alloush</span>
+        </a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#work">Work</a></li>
+            <li><a href="apps/">Apps</a></li>
+            <li><a href="under-30/">Under 30</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="nav-actions">
+            <a href="assets/Rayan-Alloush-CV.pdf" class="btn btn-small btn-dark" download>Download CV</a>
+            <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+                <span></span><span></span>
+            </button>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero -->
+<header class="hero container" id="top">
+    <div class="hero-text">
+        <p class="status"><span class="status-dot" aria-hidden="true"></span>Open to UX/UI &amp; frontend internships · Berlin</p>
+        <h1>
+            I design interfaces people enjoy, <em>and build them in code</em>.
+        </h1>
+        <p class="hero-lead">
+            I'm Rayan, a Web Development student at SRH Berlin. I take ideas from first sketch to
+            working product: user flows and prototypes in Figma and ProtoPie, then real interfaces in
+            HTML, CSS, JavaScript, React and Flutter. I've designed for a retail client, interned as a
+            frontend developer and UI designer at Think3DDD, and my team's sensor headset earned a
+            Certificate of Achievement in China.
+        </p>
+        <div class="hero-cta">
+            <a href="#work" class="btn btn-accent">See my work <span aria-hidden="true">↓</span></a>
+            <a href="assets/Rayan-Alloush-CV.pdf" class="btn btn-ghost" download>Download CV <span aria-hidden="true">↗</span></a>
+        </div>
+        <ul class="quick-facts" aria-label="Quick facts">
+            <li><span class="qf-label">Studying</span><span>B.Sc. Web Development, SRH Berlin</span></li>
+            <li><span class="qf-label">Focus</span><span>UX/UI design · Frontend development</span></li>
+            <li><span class="qf-label">Languages</span><span>Arabic (native) · English C1 · German A2</span></li>
+        </ul>
+    </div>
+
+    <div class="hero-build" id="build" data-stage="0">
+        <div class="bd-frame" role="img" aria-label="Animation: a rough sketch of a dashboard turns into a polished interface, then comes alive with live data">
+            <div class="bd-bar" aria-hidden="true"><span></span><span></span><span></span><span class="bd-url">waves.dashboard</span></div>
+            <span class="bd-stage-label" id="bdLabel" aria-hidden="true">01 · Sketch</span>
+            <div class="bd-screen" aria-hidden="true">
+                <svg class="bd-sketch" viewBox="0 0 360 400">
+                    <rect class="d1" x="18" y="16" width="324" height="36" rx="10"></rect>
+                    <circle class="d1" cx="37" cy="34" r="8"></circle>
+                    <path class="d1" d="M54 34 H112"></path>
+                    <circle class="d1" cx="321" cy="34" r="10"></circle>
+                    <path class="d2" d="M18 74 H96 M18 96 H200"></path>
+                    <rect class="d3" x="18" y="116" width="324" height="132" rx="14"></rect>
+                    <path class="d3" d="M34 210 L70 170 L104 196 L140 150 L178 186 L214 140 L252 176 L290 146 L326 166"></path>
+                    <rect class="d4" x="18" y="262" width="100" height="56" rx="12"></rect>
+                    <rect class="d4" x="130" y="262" width="100" height="56" rx="12"></rect>
+                    <rect class="d4" x="242" y="262" width="100" height="56" rx="12"></rect>
+                    <rect class="d5" x="18" y="336" width="324" height="44" rx="22"></rect>
+                    <path class="d5" d="M140 358 H220"></path>
+                    <text class="bd-note" x="208" y="108">← live chart?</text>
+                    <text class="bd-note" x="200" y="330">big, friendly CTA</text>
+                </svg>
+                <div class="bd-ui">
+                    <div class="bd-top"><span class="bd-logo"></span><b>Waves</b><span class="bd-ava">RA</span></div>
+                    <div class="bd-title"><small>Session 12</small><strong>Speech &amp; motion</strong></div>
+                    <div class="bd-chart">
+                        <svg viewBox="0 0 300 110" preserveAspectRatio="none">
+                            <path class="bd-grid" d="M0 27 H300 M0 55 H300 M0 83 H300"></path>
+                            <path class="bd-ghost" d="M0 70 C20 40 35 90 55 60 S90 30 110 55 S145 95 165 60 S200 25 220 50 S255 85 275 55 S295 40 300 45"></path>
+                            <path class="bd-area" d="M0 70 C20 40 35 90 55 60 S90 30 110 55 S145 95 165 60 S200 25 220 50 S255 85 275 55 S295 40 300 45 L300 110 L0 110 Z"></path>
+                            <path class="bd-line" d="M0 70 C20 40 35 90 55 60 S90 30 110 55 S145 95 165 60 S200 25 220 50 S255 85 275 55 S295 40 300 45"></path>
+                        </svg>
+                        <span class="bd-rec"><i></i>LIVE</span>
+                    </div>
+                    <div class="bd-stats">
+                        <div><small>Sound</small><b id="bdDb">—</b> dB</div>
+                        <div><small>Mouth</small><b id="bdMouth">—</b> cm</div>
+                        <div><small>Motion</small><b id="bdHz">—</b> Hz</div>
+                    </div>
+                    <div class="bd-btn"><span class="bd-off">Start session</span><span class="bd-on">Recording…</span></div>
+                </div>
+            </div>
+        </div>
+        <span class="bd-ship" aria-hidden="true"><i>✓</i>Shipped</span>
+        <span class="bd-chip bd-chip-0" aria-hidden="true">✎ Sketch the idea</span>
+        <span class="bd-chip bd-chip-1" aria-hidden="true">Figma · ProtoPie</span>
+        <span class="bd-chip bd-chip-2" aria-hidden="true">React · live data</span>
+        <svg class="bd-cursor" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 2 L20 12 L12.5 13.5 L9 21 Z" fill="#141414" stroke="#fff" stroke-width="1.5" stroke-linejoin="round"></path></svg>
+        <div class="bd-steps" role="group" aria-label="Show a step of the animation">
+            <button type="button" data-step="0" aria-pressed="true"><span class="bd-prog"></span>01 · Sketch</button>
+            <button type="button" data-step="1" aria-pressed="false"><span class="bd-prog"></span>02 · Design</button>
+            <button type="button" data-step="2" aria-pressed="false"><span class="bd-prog"></span>03 · Build</button>
+        </div>
+        <div class="hv-badge">
+            <img src="assets/avatar-rayan.svg" alt="">
+            <div>
+                <strong>Rayan Alloush</strong>
+                <span>UX/UI design · Frontend</span>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Logos / proof strip -->
+<section class="proof container" aria-label="Worked with">
+    <p class="proof-label">Projects with</p>
+    <ul class="proof-list">
+        <li>Think3DDD</li>
+        <li>Müller Stores (EDURINO)</li>
+        <li>Sino-German Design Workshop</li>
+        <li>SRH Hochschule für Gesundheit</li>
+        <li>SRH Gera Hospital</li>
+        <li>Shanghai Exchange Program</li>
+        <li>Handic.app</li>
+        <li>Sukoon App</li>
+    </ul>
+</section>
+
+<main>
+    <!-- What I do -->
+    <section class="roles container" aria-labelledby="rolesTitle">
+        <h2 id="rolesTitle" class="roles-title">What I do</h2>
+        <div class="roles-grid">
+            <a class="role reveal" href="apps/">
+                <span class="role-icon" aria-hidden="true">✦</span>
+                <span class="role-tag role-tag-main">Main focus</span>
+                <h3>UX/UI Design</h3>
+                <p>User flows, wireframes and clickable prototypes in Figma and ProtoPie, designed around real users.</p>
+                <span class="role-link">See design case studies</span>
+            </a>
+            <a class="role reveal" href="#work">
+                <span class="role-icon" aria-hidden="true">{ }</span>
+                <span class="role-tag role-tag-main">Main focus</span>
+                <h3>Frontend Development</h3>
+                <p>Responsive, accessible interfaces in HTML, CSS, JavaScript, React and Flutter.</p>
+                <span class="role-link">See web &amp; app work</span>
+            </a>
+            <a class="role role-bonus reveal" href="#hardware">
+                <span class="role-icon" aria-hidden="true">⏚</span>
+                <span class="role-tag">Bonus</span>
+                <h3>Hardware &amp; IoT</h3>
+                <p>Raspberry Pi and sensors, so I understand what happens behind the interface.</p>
+                <span class="role-link">See the sensor headset</span>
+            </a>
+            <a class="role role-bonus reveal" href="#data">
+                <span class="role-icon" aria-hidden="true">▤</span>
+                <span class="role-tag">Bonus</span>
+                <h3>Data &amp; Insights</h3>
+                <p>Python and R analysis that turns user and product data into design decisions.</p>
+                <span class="role-link">See data projects</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Selected work -->
+    <section id="work" class="section container">
+        <div class="section-head reveal">
+            <p class="eyebrow">01 — Selected work</p>
+            <h2>Design &amp; frontend work</h2>
+            <p class="section-intro">Real users and real constraints: a retail client, a hospital, students and kids. Each project has a full case study.</p>
+        </div>
+
+        <div class="work-grid">
+            <a class="work-card work-wide reveal" href="under-30/">
+                <div class="work-media stage stage-u30">
+                    <span class="u30-tiles" aria-hidden="true">
+                        <span class="u30-tile u30-lead"><span class="u30-chip">challenge</span><span class="u30-h">Under <em>thirty.</em></span></span>
+                        <span class="u30-tile" style="background:#0E3B2E;color:#FFF3E0"><span class="u30-chip" style="background:#FF7A1A;color:#0E3B2E">pulp.</span><span class="u30-h" style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800">Squeezed this morning.</span></span>
+                        <span class="u30-tile" style="background:#0B0D10;color:#E6E8EB"><span class="u30-chip" style="background:#C6FF3D;color:#0B0D10">relay</span><span class="u30-h" style="font-family:'Space Grotesk',sans-serif;font-weight:700">Every webhook delivered.</span></span>
+                        <span class="u30-tile" style="background:#F2F0EB;color:#111"><span class="u30-chip" style="background:#111;color:#F2F0EB">Northfield</span><span class="u30-h" style="font-family:'Inter Tight',sans-serif;font-weight:700">Quiet buildings.</span></span>
+                        <span class="u30-tile" style="background:#050607;color:#E9F7FA"><span class="u30-chip" style="background:#3DF2FF;color:#050607">VOLTA</span><span class="u30-h" style="font-family:'Chakra Petch',sans-serif;font-weight:700;text-transform:uppercase">Volta Ø1</span></span>
+                        <span class="u30-tile" style="background:#05060F;color:#EDEFF7"><span class="u30-chip" style="background:#FF8A3D;color:#05060F">ORBITAL</span><span class="u30-h" style="font-family:'Unbounded',sans-serif;font-weight:800">400 km up.</span></span>
+                        <span class="u30-tile" style="background:#1F4D3A;color:#FBF3E6"><span class="u30-chip" style="background:#F4C66A;color:#1F2A1F">Hearth &amp; Bean</span><span class="u30-h" style="font-family:'Fraunces',serif;font-style:italic;font-weight:600">Christmas, freshly roasted.</span></span>
+                        <span class="u30-tile" style="background:#0A0A0F;color:#fff"><span class="u30-chip" style="background:#FF2E88;color:#0A0A0F">APEX 77</span><span class="u30-h" style="font-family:'Anton',sans-serif;text-transform:uppercase;font-weight:400">Built for the last lap.</span></span>
+                    </span>
+                </div>
+                <div class="work-body">
+                    <p class="case-meta">Personal challenge · AI-assisted · 2026</p>
+                    <h3>Under 30: Seven Sites on the Clock</h3>
+                    <p>Seven brands, seven visual styles, each landing page designed in under 30 minutes.</p>
+                    <ul class="tags"><li>Web design</li><li>Art direction</li><li>Interaction</li></ul>
+                    <span class="work-cta">See all seven</span>
+                </div>
+            </a>
+            <a class="work-card reveal" href="apps/#edurino">
+                <div class="work-media stage stage-edurino"><img class="shot shot-center" style="--w: 86%" src="assets/eduimg.webp" alt="EDURINO screens: character intro, a maze mini-game and a parent sign-up page" loading="lazy" width="1400" height="652"></div>
+                <div class="work-body">
+                    <p class="case-meta">Client work · Müller stores · 2024</p>
+                    <h3>EDURINO In-Store Kids' Game</h3>
+                    <p>An in-store screen that makes learning feel like play and turns parents' interest into sign-ups.</p>
+                    <ul class="tags"><li>Figma</li><li>ProtoPie</li><li>Client</li></ul>
+                    <span class="work-cta">Read the case study</span>
+                </div>
+            </a>
+            <a class="work-card reveal" href="apps/#nutrihero">
+                <div class="work-media stage stage-nutri"><div class="browser"><div class="browser-bar" aria-hidden="true"><i></i><i></i><i></i></div><img src="assets/nutrihero.webp" alt="Nutrihero landing page with a comic-book style hero" loading="lazy" width="1600" height="867"></div></div>
+                <div class="work-body">
+                    <p class="case-meta">App design + live website</p>
+                    <h3>Nutrihero: Gamified Nutrition</h3>
+                    <p>A comic-style app that helps teens build better habits. I designed the app and coded its live landing page.</p>
+                    <ul class="tags"><li>Figma</li><li>ProtoPie</li><li>HTML/CSS/JS</li></ul>
+                    <span class="work-cta">Read the case study</span>
+                </div>
+            </a>
+            <a class="work-card reveal" href="apps/#volunteer">
+                <div class="work-media stage stage-shanghai"><img class="shot" style="--w: 8okay0%; --b: -14%" src="assets/shanghai-app.webp" alt="Three phone screens of a Chinese-language hospital volunteer app with a sunflower theme" loading="lazy" width="1200" height="900"></div>
+                <div class="work-body">
+                    <p class="case-meta">Team project · Shanghai · 2025</p>
+                    <h3>Hospital Volunteer App</h3>
+                    <p>A prototype that pairs volunteers with elderly patients through an “Adopt a Grandparent” feature.</p>
+                    <ul class="tags"><li>ProtoPie</li><li>UI/UX</li><li>Teamwork</li></ul>
+                    <span class="work-cta">Read the case study</span>
+                </div>
+            </a>
+            <a class="work-card reveal" href="apps/#modulor">
+                <div class="work-media stage stage-modulor"><img class="shot" style="--w: 80%; --b: -7%" src="assets/srhmodularap.webp" alt="Three phone screens of the Modulor app: home with categories, order review and a product page" loading="lazy" width="1100" height="837"></div>
+                <div class="work-body">
+                    <p class="case-meta">UI design + Flutter · Mobile app</p>
+                    <h3>Modulor Smart Locker Shopping App</h3>
+                    <p>A complete shopping flow for students, from browsing to paying to picking up from a real smart locker that unlocks with a QR code. I designed it in Figma and built it in Flutter.</p>
+                    <ul class="tags"><li>Figma</li><li>Flutter</li><li>Dart</li><li>Real hardware</li></ul>
+                    <span class="work-cta">Read the case study</span>
+                </div>
+            </a>
+        </div>
+        <div class="work-more"><a href="apps/" class="btn btn-dark">All app case studies <span aria-hidden="true">→</span></a></div>
+    </section>
+
+    <!-- Beyond the screen: Waves -->
+    <section id="hardware" class="section container section-tight">
+        <div class="section-head reveal">
+            <p class="eyebrow">02 — Beyond the screen</p>
+            <h2>From sensor to dashboard</h2>
+            <p class="section-intro">My favourite team project goes all the way from hardware to the interface researchers actually use, and it won an award.</p>
+        </div>
+
+        <article class="case case-feature reveal">
+            <div class="feature-head">
+                <div>
+                    <p class="case-meta">Embedded systems · IoT · Healthcare research · 2026</p>
+                    <h3>Waves: A Sensor Headset for Parkinson's Speech Research</h3>
+                    <p class="feature-lead">
+                        A wearable headset that records how Parkinson's patients speak and move, for a research
+                        group studying the link between language and movement. It started as an SRH Berlin
+                        project with SRH Hochschule für Gesundheit, and we developed it further at the
+                        <strong>2026 Sino-German Design Innovation Workshop in China</strong>, where our team
+                        earned a Certificate of Achievement.
+                    </p>
+                </div>
+                <div class="feature-badge" aria-label="Award">
+                    <span class="fb-icon" aria-hidden="true">★</span>
+                    <span><strong>Certificate of Achievement</strong>3rd Sino-German Design Workshop · Sep 2026</span>
+                </div>
+            </div>
+
+            <div class="gallery">
+                <figure class="g-tall">
+                    <img src="assets/waves-poster.webp" alt="Exhibition stand at the 2026 Sino-German Design Innovation Workshop showing the Parkinson's speech therapy poster and the white sensor headset" loading="lazy" width="619" height="1100">
+                    <figcaption>Exhibited in China</figcaption>
+                </figure>
+                <figure>
+                    <img src="assets/waves-headset.webp" alt="Inside the 3D-printed headset: a Raspberry Pi, camera ribbon cable and sensor wiring" loading="lazy" width="825" height="1100">
+                    <figcaption>Raspberry Pi inside the headset</figcaption>
+                </figure>
+                <figure>
+                    <img src="assets/waves-certificate.webp" alt="Certificate of Achievement from the 2026 Sino-German Design Workshop, September 20 to 30, 2026" loading="lazy" width="1100" height="769">
+                    <figcaption>Certificate of Achievement</figcaption>
+                </figure>
+            </div>
+
+            <div class="feature-body">
+                <div>
+                    <h4>What it does</h4>
+                    <ul class="case-points">
+                        <li>Captures speech, mouth movement and body motion at the same time</li>
+                        <li>Streams live data to a web dashboard where researchers start and stop sessions</li>
+                        <li>Measures sound level, mouth opening and movement for each recording</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>How we built it</h4>
+                    <ul class="case-points">
+                        <li>Raspberry Pi with an MPU-6050 motion sensor (I²C, 40 Hz), an INMP441 mic and a camera</li>
+                        <li>Python streamer on the Pi sending motion, audio and live video over WebSockets</li>
+                        <li>TypeScript server with SQLite storage, a documented REST API and face-mesh mouth tracking</li>
+                        <li>React dashboard for live charts, video and reviewing recorded sessions</li>
+                    </ul>
+                </div>
+            </div>
+            <ul class="tags"><li>Raspberry Pi</li><li>Python</li><li>I²C sensors</li><li>WebSockets</li><li>TypeScript</li><li>React</li><li>SQLite</li><li>Computer vision</li><li>Docker</li><li>Team project</li></ul>
+        </article>
+    </section>
+
+    <!-- Data & AI -->
+    <section id="data" class="section container section-tight">
+        <div class="section-head reveal">
+            <p class="eyebrow">03 — Data &amp; insights</p>
+            <h2>I also speak data</h2>
+            <p class="section-intro">Analysis and machine-learning projects in Python and R, each answering one clear question. Useful when design decisions need evidence.</p>
+        </div>
+        <div class="data-grid">
+            <article class="data-card reveal">
+                <div class="dc-stat"><span class="dc-num">5×</span><span class="dc-cap">salary gap between the highest- and lowest-paying countries</span></div>
+                <p class="case-meta">Python · EDA · 49,191 survey responses</p>
+                <h3>What Really Predicts a Developer's Salary?</h3>
+                <p>Cleaned the messy 2025 Stack Overflow Developer Survey (172 columns, salaries from $1 to $33.5M) and found that country matters far more than years of experience (r ≈ 0.32). Includes an interactive salary predictor.</p>
+                <ul class="tags"><li>Python</li><li>pandas</li><li>matplotlib</li><li>Jupyter</li><li>JavaScript</li></ul>
+                <div class="case-links">
+                    <a href="https://rayray20044.github.io/developer-salary-eda/" target="_blank" rel="noopener" class="link-arrow">Read the analysis</a>
+                    <a href="https://rayray20044.github.io/developer-salary-eda/predictor.html" target="_blank" rel="noopener" class="link-arrow">Try the predictor</a>
+                    <a href="https://github.com/rayray20044/developer-salary-eda" target="_blank" rel="noopener" class="link-arrow">Code</a>
+                </div>
+            </article>
+
+            <article class="data-card reveal">
+                <div class="dc-stat"><span class="dc-num">114k</span><span class="dc-cap">Spotify tracks analysed, 24,259 duplicates removed</span></div>
+                <p class="case-meta">Python · EDA · Interactive explorer</p>
+                <h3>What Actually Makes a Song Popular?</h3>
+                <p>Tested whether a song's sound (energy, danceability, mood) predicts popularity. It barely does (every correlation is under 0.2), but genre does. Built a Genre Explorer that compares 113 genres against the baseline.</p>
+                <ul class="tags"><li>Python</li><li>pandas</li><li>matplotlib</li><li>Jupyter</li><li>JavaScript</li></ul>
+                <div class="case-links">
+                    <a href="https://rayray20044.github.io/spotify-popularity-eda/" target="_blank" rel="noopener" class="link-arrow">Read the analysis</a>
+                    <a href="https://rayray20044.github.io/spotify-popularity-eda/genre-explorer.html" target="_blank" rel="noopener" class="link-arrow">Genre Explorer</a>
+                    <a href="https://github.com/rayray20044/spotify-popularity-eda" target="_blank" rel="noopener" class="link-arrow">Code</a>
+                </div>
+            </article>
+
+            <article class="data-card reveal">
+                <div class="dc-stat"><span class="dc-num">3</span><span class="dc-cap">ML models in one Streamlit app: classifier, recommender, outfit builder</span></div>
+                <p class="case-meta">Python · Machine learning · SRH AI course</p>
+                <h3>ATELIER: Zara Fashion AI</h3>
+                <p>A style finder built on 4,176 Zara products. TF-IDF + logistic regression predicts clothing type from text, cosine similarity recommends similar items, and an outfit builder fits a look to a budget. Compared KNN, Decision Tree and Random Forest on the same split.</p>
+                <ul class="tags"><li>Python</li><li>scikit-learn</li><li>Streamlit</li><li>NLP / TF-IDF</li></ul>
+            </article>
+
+            <article class="data-card reveal">
+                <div class="dc-stat"><span class="dc-num">50k</span><span class="dc-cap">orders modelled to flag likely returns before they ship</span></div>
+                <p class="case-meta">R · Machine learning · Business case</p>
+                <h3>E-Commerce Return Risk Prediction</h3>
+                <p>An end-to-end R pipeline on messy simulated order data: exploration, cleaning, feature engineering, then logistic regression vs. random forest compared by AUC, with the results turned into actions a retailer could take.</p>
+                <ul class="tags"><li>R</li><li>tidyverse</li><li>caret</li><li>randomForest</li><li>pROC</li></ul>
+            </article>
+        </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience" class="section section-alt">
+        <div class="container exp-grid">
+            <div class="section-head reveal">
+                <p class="eyebrow">04 — Experience</p>
+                <h2>Real projects, real users</h2>
+                <p class="section-intro">An internship, client work, freelance and team projects alongside my studies.</p>
+                <a href="assets/Rayan-Alloush-CV.pdf" class="btn btn-ghost" download>Full CV (PDF) <span aria-hidden="true">↗</span></a>
+            </div>
+
+            <ol class="timeline reveal">
+                <li>
+                    <span class="tl-date">Sep 2026</span>
+                    <div>
+                        <h3>Sino-German Design Innovation Workshop <span class="tl-type">China · Award</span></h3>
+                        <p>Co-developed a Raspberry Pi sensor headset and live web dashboard for Parkinson's speech research. Our team earned a Certificate of Achievement.</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="tl-date">Summer 2026</span>
+                    <div>
+                        <h3>Google Developer Group on Campus SRH Berlin <span class="tl-type">Community</span></h3>
+                        <p>Active member at GDG events all semester, recognised with a Certificate of Participation.</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="tl-date">Ongoing</span>
+                    <div>
+                        <h3>Sukoon App <span class="tl-type">Freelance</span></h3>
+                        <p>Designing the UI in Figma and building the frontend for an Arabic brainwave audio app.</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="tl-date">Oct 2025 – Jan 2026</span>
+                    <div>
+                        <h3>Think3DDD <span class="tl-type">Internship</span></h3>
+                        <p class="tl-role">Frontend Developer / UI Designer</p>
+                        <p>Worked on the frontend of the company website and supported the team with UI/UX design in Figma.</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="tl-date">2025</span>
+                    <div>
+                        <h3>Handic.app <span class="tl-type">Accessibility</span></h3>
+                        <p>Built a Strapi backend for a platform that helps disabled people find and attend concerts and events.</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="tl-date">2025</span>
+                    <div>
+                        <h3>Shanghai Exchange Program <span class="tl-type">Team project</span></h3>
+                        <p>Prototyped a hospital volunteer app in ProtoPie with an international team, including the “Adopt a Grandparent” feature.</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="tl-date">2024</span>
+                    <div>
+                        <h3>EDURINO × Müller Stores <span class="tl-type">Client</span></h3>
+                        <p>Designed an interactive in-store screen and ad flow that promotes educational products to families.</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="tl-date">2023</span>
+                    <div>
+                        <h3>SRH Gera Hospital <span class="tl-type">Healthcare</span></h3>
+                        <p>Developed a navigation app that guides patients and visitors through the hospital.</p>
+                    </div>
+                </li>
+                <li class="tl-edu">
+                    <span class="tl-date">2023 – now</span>
+                    <div>
+                        <h3>SRH Berlin University of Applied Sciences <span class="tl-type">Education</span></h3>
+                        <p>B.Sc. Web Development</p>
+                    </div>
+                </li>
+            </ol>
+        </div>
+    </section>
+
+    <!-- Certificates -->
+    <section id="certificates" class="section container">
+        <div class="section-head reveal">
+            <p class="eyebrow">05 — Certificates</p>
+            <h2>Recognition</h2>
+        </div>
+        <div class="certs">
+            <figure class="cert reveal">
+                <div class="cert-img"><img src="assets/waves-certificate.webp" alt="Certificate of Achievement from the 2026 Sino-German Design Workshop, September 20 to 30, 2026" loading="lazy" width="1100" height="769"></div>
+                <figcaption>
+                    <span class="cert-tag">Achievement</span>
+                    <strong>2026 Sino-German Design Workshop</strong>
+                    <span>Sep 2026 · China · For the Waves sensor headset</span>
+                </figcaption>
+            </figure>
+            <figure class="cert reveal">
+                <div class="cert-img"><img src="assets/gdg-certificate.webp" alt="Certificate of Participation from Google Developer Group on Campus SRH Berlin, Summer Semester 2026" loading="lazy" width="1100" height="781"></div>
+                <figcaption>
+                    <span class="cert-tag">Participation</span>
+                    <strong>Google Developer Group on Campus SRH Berlin</strong>
+                    <span>Summer Semester 2026 · Active member at GDG events</span>
+                </figcaption>
+            </figure>
+        </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="section container">
+        <div class="section-head reveal">
+            <p class="eyebrow">06 — Skills</p>
+            <h2>What I work with</h2>
+        </div>
+        <div class="skills reveal">
+            <div class="skill-group">
+                <h3><span class="sg-icon" aria-hidden="true">✦</span>Design</h3>
+                <ul class="tags tags-lg"><li>Figma</li><li>ProtoPie</li><li>UI/UX design</li><li>Wireframing</li><li>Interactive prototyping</li><li>User flows</li><li>Canva</li></ul>
+            </div>
+            <div class="skill-group">
+                <h3><span class="sg-icon" aria-hidden="true">{ }</span>Frontend</h3>
+                <ul class="tags tags-lg"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>React</li><li>TypeScript</li><li>Flutter / Dart</li><li>Responsive design</li></ul>
+            </div>
+            <div class="skill-group">
+                <h3><span class="sg-icon" aria-hidden="true">◎</span>How I work</h3>
+                <ul class="tags tags-lg"><li>Communication</li><li>Teamwork</li><li>Problem-solving</li><li>Time management</li><li>Accessibility-minded</li><li>International teams</li></ul>
+            </div>
+            <div class="skill-group">
+                <h3><span class="sg-icon" aria-hidden="true">⌘</span>Backend &amp; tools</h3>
+                <ul class="tags tags-lg"><li>Git &amp; GitHub</li><li>REST APIs</li><li>Strapi</li><li>WebSockets</li><li>SQLite</li><li>Docker</li><li>Java</li></ul>
+            </div>
+            <div class="skill-group">
+                <h3><span class="sg-icon" aria-hidden="true">▤</span>Data &amp; AI</h3>
+                <ul class="tags tags-lg"><li>Python</li><li>pandas</li><li>Jupyter</li><li>scikit-learn</li><li>Streamlit</li><li>R / tidyverse</li><li>EDA</li></ul>
+            </div>
+            <div class="skill-group">
+                <h3><span class="sg-icon" aria-hidden="true">⏚</span>Hardware &amp; IoT</h3>
+                <ul class="tags tags-lg"><li>Raspberry Pi</li><li>Python</li><li>I²C sensors</li><li>Microphones &amp; cameras</li><li>Real-time streaming</li></ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="contact">
+        <div class="container contact-inner reveal">
+            <p class="eyebrow eyebrow-light">07 — Contact</p>
+            <h2>Hiring a UX/UI or<br>frontend intern?<br><span>Let's talk.</span></h2>
+            <p class="contact-lead">I'm based in Berlin, open to internships and projects, and happy to chat.</p>
+            <div class="contact-email">
+                <a href="mailto:alloushrayan3@gmail.com" class="email-big">alloushrayan3@gmail.com</a>
+                <button class="copy-btn" id="copyEmail" data-email="alloushrayan3@gmail.com">Copy</button>
+            </div>
+            <ul class="contact-links">
+                <li><a href="https://linkedin.com/in/rayan-alloush" target="_blank" rel="noopener">LinkedIn ↗</a></li>
+                <li><a href="https://github.com/rayray20044" target="_blank" rel="noopener">GitHub ↗</a></li>
+                <li><a href="assets/Rayan-Alloush-CV.pdf" download>CV (PDF) ↓</a></li>
+            </ul>
+        </div>
+    </section>
+</main>
+
+<footer class="footer">
+    <div class="container footer-inner">
+        <p>© <span id="year">2026</span> Rayan Alloush · Berlin, Germany</p>
+        <a href="#top">Back to top ↑</a>
+    </div>
+</footer>
+
+<script>
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Nav shadow on scroll
+    const nav = document.getElementById('nav');
+    const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 10);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    // Mobile menu
+    const menuBtn = document.getElementById('menuBtn');
+    const navLinks = document.getElementById('navLinks');
+    menuBtn.addEventListener('click', () => {
+        const open = navLinks.classList.toggle('open');
+        menuBtn.classList.toggle('open', open);
+        menuBtn.setAttribute('aria-expanded', open);
+    });
+    navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        menuBtn.classList.remove('open');
+        menuBtn.setAttribute('aria-expanded', 'false');
+    }));
+
+    // Reveal on scroll
+    const io = new IntersectionObserver(entries => {
+        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+    // Active nav link
+    const sections = [...document.querySelectorAll('main section[id]')];
+    const links = [...navLinks.querySelectorAll('a')];
+    const spy = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+            if (e.isIntersecting) {
+                links.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + e.target.id));
+            }
+        });
+    }, { rootMargin: '-45% 0px -50% 0px' });
+    sections.forEach(s => spy.observe(s));
+
+    // Hero: idea → product build animation
+    (() => {
+        const root = document.getElementById('build');
+        if (!root) return;
+        const label = document.getElementById('bdLabel');
+        const buttons = [...root.querySelectorAll('.bd-steps button')];
+        const names = ['01 · Sketch', '02 · Design', '03 · Build'];
+        const durations = [3200, 3000, 4200];
+        const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const db = document.getElementById('bdDb'), mouth = document.getElementById('bdMouth'), hz = document.getElementById('bdHz');
+        let stage = 0, timer = null, ticker = null, clickTimer = null, paused = false;
+
+        function tick() {
+            db.textContent = Math.round(58 + Math.random() * 10);
+            mouth.textContent = (1.2 + Math.random() * 1.1).toFixed(1);
+            hz.textContent = 40;
+        }
+        function show(n) {
+            stage = n;
+            root.dataset.stage = n;
+            label.textContent = names[n];
+            root.style.setProperty('--bd-dur', durations[n] + 'ms');
+            buttons.forEach((b, i) => b.setAttribute('aria-pressed', i === n ? 'true' : 'false'));
+            clearInterval(ticker); clearTimeout(clickTimer); root.classList.remove('bd-click');
+            if (n === 2) { tick(); ticker = setInterval(tick, 450); }
+            else { db.textContent = mouth.textContent = hz.textContent = '—'; }
+            if (n === 1 && !reduced) clickTimer = setTimeout(() => root.classList.add('bd-click'), durations[1] - 350);
+        }
+        function schedule() {
+            clearTimeout(timer);
+            if (paused || reduced) return;
+            timer = setTimeout(() => { show((stage + 1) % 3); schedule(); }, durations[stage]);
+        }
+        function pause() { paused = true; root.classList.add('is-paused'); clearTimeout(timer); }
+        function resume() { paused = false; root.classList.remove('is-paused'); schedule(); }
+
+        buttons.forEach((b, i) => b.addEventListener('click', () => { show(i); schedule(); }));
+        root.addEventListener('mouseenter', pause);
+        root.addEventListener('mouseleave', resume);
+        root.addEventListener('focusin', pause);
+        root.addEventListener('focusout', e => { if (!root.contains(e.relatedTarget)) resume(); });
+        document.addEventListener('visibilitychange', () => { if (document.hidden) clearTimeout(timer); else if (!paused) schedule(); });
+
+        show(reduced ? 2 : 0);
+        schedule();
+    })();
+
+    // Copy email
+    const copyBtn = document.getElementById('copyEmail');
+    copyBtn.addEventListener('click', async () => {
+        try {
+            await navigator.clipboard.writeText(copyBtn.dataset.email);
+            copyBtn.textContent = 'Copied ✓';
+        } catch { copyBtn.textContent = 'Select & copy'; }
+        setTimeout(() => copyBtn.textContent = 'Copy', 2000);
+    });
+</script>
+</body>
+</html>

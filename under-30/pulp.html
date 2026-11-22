@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pulp — cold-pressed juice</title>
+<meta name="description" content="Under 30 — seven web design concepts by Rayan Alloush, each designed in under 30 minutes.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&amp;display=swap">
+<style>
+body{margin:0;background:#0E3B2E}
+a{color:#FFF3E0}a:hover{color:#FF7A1A}
+*{box-sizing:border-box}
+</style>
+</head>
+<body>
+<div id="dc-root"></div>
+<script type="text/x-dc-template" id="dc-template">
+<div style="font-family: 'Bricolage Grotesque', system-ui, sans-serif; background: #0E3B2E; color: #FFF3E0; width: 100%; overflow: hidden">
+
+  <header style="max-width: 1320px; margin: 0 auto; padding: 28px 40px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px">
+    <a href="#top" style="font-size: 36px; font-weight: 800; letter-spacing: -1.5px; text-decoration: none; color: #FFF3E0">pulp<span style="color: #FF7A1A">.</span></a>
+    <nav aria-label="Main" style="display: flex; flex-wrap: wrap; gap: 32px; font-size: 17px; font-weight: 600">
+      <a href="#flavors" style="text-decoration: none">Flavors</a>
+      <a href="#how" style="text-decoration: none">How it's made</a>
+      <a href="#subscribe" style="text-decoration: none">Subscribe</a>
+      <a href="#find" style="text-decoration: none">Find us</a>
+    </nav>
+    <button style="min-height: 48px; padding: 0 24px; border-radius: 999px; border: 2px solid #FFF3E0; background: transparent; color: #FFF3E0; font: 600 16px 'Bricolage Grotesque', sans-serif; cursor: pointer">Cart (0)</button>
+  </header>
+
+  <section id="top" style="max-width: 1320px; margin: 0 auto; padding: 48px 40px 96px; display: flex; flex-wrap: wrap; align-items: center; gap: 56px">
+    <div style="flex: 1 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 28px">
+      <p style="margin: 0; font-size: 15px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: #FF7A1A">Small-batch · Cold-pressed · Berlin</p>
+      <h1 style="margin: 0; font-size: clamp(56px, 7.5vw, 112px); line-height: 0.92; font-weight: 800; letter-spacing: -4px">Squeezed this morning. Gone by Friday.</h1>
+      <p style="margin: 0; max-width: 480px; font-size: 20px; line-height: 1.5; opacity: 0.85">Whole fruit and veg, pressed raw and bottled the same day. No concentrates, no added sugar — just a five-day window to drink it at its best.</p>
+      <div style="display: flex; flex-wrap: wrap; gap: 14px">
+        <a href="#flavors" style="min-height: 56px; padding: 0 32px; border-radius: 999px; background: #FF7A1A; color: #0E3B2E; font-size: 18px; font-weight: 800; text-decoration: none; display: inline-flex; align-items: center">Shop the menu</a>
+        <a href="#subscribe" style="min-height: 56px; padding: 0 32px; border-radius: 999px; border: 2px solid #FFF3E0; font-size: 18px; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center">Weekly box</a>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 12px; padding-top: 12px">
+        <p style="margin: 0; font-size: 14px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; opacity: 0.8">Try a flavor</p>
+        <div role="group" aria-label="Choose a flavor" style="display: flex; flex-wrap: wrap; gap: 10px">
+          <sc-for list="{{flavors}}" as="f" hint-placeholder-count="4">
+            <button onClick="{{f.pick}}" aria-pressed="{{f.pressed}}" style="{{f.pillStyle}}">{{f.name}}</button>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+
+    <div style="flex: 1 1 440px; min-width: 0; display: flex; justify-content: center; position: relative; min-height: 600px; align-items: center">
+      <div aria-hidden="true" style="{{heroCircle}}"></div>
+      <div aria-hidden="true" style="position: absolute; top: 30px; right: 8%; width: 132px; height: 132px; border-radius: 50%; background: #FFC629; color: #0E3B2E; display: flex; align-items: center; justify-content: center; text-align: center; font-size: 15px; font-weight: 800; line-height: 1.1; transform: rotate(14deg); padding: 16px">NEW BATCH EVERY MONDAY</div>
+      <div role="img" aria-label="{{bottleLabel}}" style="position: relative; display: flex; flex-direction: column; align-items: center; transform: rotate(-6deg)">
+        <div style="width: 96px; height: 44px; border-radius: 12px 12px 4px 4px; background: #FFF3E0"></div>
+        <div style="width: 128px; height: 54px; background: rgba(255,243,224,0.35); border-radius: 6px 6px 0 0"></div>
+        <div style="{{bottleBody}}">
+          <div style="width: 200px; padding: 28px 18px; background: #FFF3E0; color: #0E3B2E; border-radius: 18px; display: flex; flex-direction: column; align-items: center; gap: 6px; text-align: center">
+            <span style="font-size: 30px; font-weight: 800; letter-spacing: -1px">pulp.</span>
+            <span style="font-size: 22px; font-weight: 800">{{current.name}}</span>
+            <span style="font-size: 13px; line-height: 1.35">{{current.ingredients}}</span>
+            <span style="font-size: 12px; font-weight: 600; letter-spacing: 1.5px; margin-top: 6px">330 ML · RAW</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div aria-hidden="true" style="background: #FF7A1A; color: #0E3B2E; padding: 22px 0; transform: rotate(-1.5deg); margin: 0 -40px; white-space: nowrap; overflow: hidden; font-size: 34px; font-weight: 800; letter-spacing: -0.5px">
+    COLD-PRESSED ✺ NO ADDED SUGAR ✺ FIVE-DAY SHELF LIFE ✺ GLASS BOTTLES, RETURNABLE ✺ COLD-PRESSED ✺ NO ADDED SUGAR ✺ FIVE-DAY SHELF LIFE ✺
+  </div>
+
+  <section id="flavors" style="max-width: 1320px; margin: 0 auto; padding: 120px 40px 80px; display: flex; flex-direction: column; gap: 48px">
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 24px">
+      <h2 style="margin: 0; font-size: clamp(44px, 5vw, 72px); font-weight: 800; letter-spacing: -2.5px; line-height: 1">The core four</h2>
+      <p style="margin: 0; max-width: 380px; font-size: 18px; line-height: 1.5; opacity: 0.85">Four year-round blends, plus a seasonal guest that changes with whatever the farms send us.</p>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px">
+      <sc-for list="{{flavors}}" as="f" hint-placeholder-count="4">
+        <article style="{{f.cardStyle}}">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 12px">
+            <span style="font-size: 15px; font-weight: 600; letter-spacing: 2px">0{{f.num}}</span>
+            <span style="font-size: 15px; font-weight: 600; padding: 6px 12px; border: 2px solid currentColor; border-radius: 999px">{{f.tag}}</span>
+          </div>
+          <div aria-hidden="true" style="{{f.blob}}"></div>
+          <div style="display: flex; flex-direction: column; gap: 8px">
+            <h3 style="margin: 0; font-size: 36px; font-weight: 800; letter-spacing: -1px">{{f.name}}</h3>
+            <p style="margin: 0; font-size: 16px; line-height: 1.45">{{f.ingredients}}</p>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px; padding-top: 16px; border-top: 2px solid currentColor">
+            <span style="font-size: 22px; font-weight: 800">{{f.price}}</span>
+            <button style="{{f.addStyle}}" aria-label="Add {{f.name}} to cart">Add +</button>
+          </div>
+        </article>
+      </sc-for>
+    </div>
+  </section>
+
+  <section id="how" style="max-width: 1320px; margin: 0 auto; padding: 80px 40px 120px; display: flex; flex-direction: column; gap: 56px">
+    <h2 style="margin: 0; font-size: clamp(44px, 5vw, 72px); font-weight: 800; letter-spacing: -2.5px; line-height: 1">From crate to cold shelf<br>in under 12 hours.</h2>
+    <ol style="margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px">
+      <li style="display: flex; flex-direction: column; gap: 16px; padding-top: 24px; border-top: 2px solid #FFF3E0">
+        <span style="font-size: 96px; font-weight: 800; line-height: 0.9; color: #FF7A1A; letter-spacing: -4px">01</span>
+        <h3 style="margin: 0; font-size: 28px; font-weight: 800">Picked up at dawn</h3>
+        <p style="margin: 0; font-size: 17px; line-height: 1.5; opacity: 0.85">Produce comes straight from growers in Brandenburg, delivered before the city wakes up.</p>
+      </li>
+      <li style="display: flex; flex-direction: column; gap: 16px; padding-top: 24px; border-top: 2px solid #FFF3E0">
+        <span style="font-size: 96px; font-weight: 800; line-height: 0.9; color: #FF7A1A; letter-spacing: -4px">02</span>
+        <h3 style="margin: 0; font-size: 28px; font-weight: 800">Pressed, never spun</h3>
+        <p style="margin: 0; font-size: 17px; line-height: 1.5; opacity: 0.85">A hydraulic press squeezes every drop slowly, so nothing gets heated and nothing gets lost.</p>
+      </li>
+      <li style="display: flex; flex-direction: column; gap: 16px; padding-top: 24px; border-top: 2px solid #FFF3E0">
+        <span style="font-size: 96px; font-weight: 800; line-height: 0.9; color: #FF7A1A; letter-spacing: -4px">03</span>
+        <h3 style="margin: 0; font-size: 28px; font-weight: 800">Bottled in glass</h3>
+        <p style="margin: 0; font-size: 17px; line-height: 1.5; opacity: 0.85">Return your empties at any stockist and we'll wash, refill and send them back out.</p>
+      </li>
+    </ol>
+  </section>
+
+  <section id="subscribe" style="background: #FFC629; color: #0E3B2E">
+    <div style="max-width: 1320px; margin: 0 auto; padding: 96px 40px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 40px">
+      <div style="flex: 1 1 460px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+        <h2 style="margin: 0; font-size: clamp(44px, 5vw, 72px); font-weight: 800; letter-spacing: -2.5px; line-height: 1">Six bottles. Every Monday. Your door.</h2>
+        <p style="margin: 0; font-size: 19px; line-height: 1.5">Pick your mix, skip a week whenever you like, cancel in two clicks.</p>
+      </div>
+      <form style="flex: 1 1 400px; min-width: 0; display: flex; flex-direction: column; gap: 10px">
+        <label for="pulp-email" style="font-size: 15px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase">Your email</label>
+        <div style="display: flex; flex-wrap: wrap; gap: 10px">
+          <input id="pulp-email" type="email" placeholder="you@example.com" style="flex: 1 1 240px; min-width: 0; min-height: 60px; padding: 0 24px; border-radius: 999px; border: 2px solid #0E3B2E; background: #FFF3E0; color: #0E3B2E; font: 400 18px 'Bricolage Grotesque', sans-serif">
+          <button type="button" style="min-height: 60px; padding: 0 32px; border-radius: 999px; border: none; background: #0E3B2E; color: #FFF3E0; font: 800 18px 'Bricolage Grotesque', sans-serif; cursor: pointer">Start my box</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <footer id="find" style="max-width: 1320px; margin: 0 auto; padding: 80px 40px 48px; display: flex; flex-direction: column; gap: 56px">
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 40px">
+      <span style="font-size: clamp(96px, 16vw, 220px); font-weight: 800; letter-spacing: -10px; line-height: 0.8">pulp<span style="color: #FF7A1A">.</span></span>
+      <div style="display: flex; flex-wrap: wrap; gap: 64px; font-size: 17px; line-height: 1.9">
+        <div style="display: flex; flex-direction: column">
+          <span style="font-weight: 800; color: #FF7A1A">Visit</span>
+          <span>[Shop address]</span>
+          <span>Mon–Sat, 8–18</span>
+        </div>
+        <div style="display: flex; flex-direction: column">
+          <span style="font-weight: 800; color: #FF7A1A">Follow</span>
+          <a href="#top">Instagram</a>
+          <a href="#top">Newsletter</a>
+        </div>
+      </div>
+    </div>
+    <p style="margin: 0; font-size: 14px; opacity: 0.75">Concept design for a fictional brand.</p>
+  </footer>
+</div>
+</script>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { picked: 0 };
+  }
+  renderVals() {
+    var data = [
+      { name: 'Sunrise', ingredients: 'Orange, carrot, turmeric, a kick of ginger', color: '#FF7A1A', ink: '#0E3B2E', tag: 'Bestseller', price: '€5.50' },
+      { name: 'Greenhouse', ingredients: 'Kale, green apple, cucumber, lime', color: '#7BC043', ink: '#0E3B2E', tag: 'Daily green', price: '€5.90' },
+      { name: 'Beet It', ingredients: 'Beetroot, red apple, lemon, mint', color: '#C2185B', ink: '#FFF3E0', tag: 'Earthy', price: '€5.50' },
+      { name: 'Tropic', ingredients: 'Pineapple, mango, passion fruit, lime', color: '#FFC629', ink: '#0E3B2E', tag: 'Sweet', price: '€6.20' }
+    ];
+    var picked = this.state.picked;
+    var self = this;
+    var flavors = data.map(function (f, i) {
+      var on = i === picked;
+      return Object.assign({}, f, {
+        num: i + 1,
+        pressed: on ? 'true' : 'false',
+        pick: function () { self.setState({ picked: i }); },
+        pillStyle: 'min-height: 48px; padding: 0 22px; border-radius: 999px; cursor: pointer; font: 600 16px \'Bricolage Grotesque\', sans-serif; transition: all .2s; border: 2px solid ' + (on ? f.color : 'rgba(255,243,224,0.5)') + '; background: ' + (on ? f.color : 'transparent') + '; color: ' + (on ? f.ink : '#FFF3E0'),
+        cardStyle: 'background: ' + f.color + '; color: ' + f.ink + '; border-radius: 32px; padding: 28px; display: flex; flex-direction: column; gap: 24px; min-height: 460px',
+        blob: 'height: 150px; border-radius: 50% 50% 46% 54% / 60% 44% 56% 40%; background: ' + f.ink + '; opacity: 0.14',
+        addStyle: 'min-height: 48px; padding: 0 22px; border-radius: 999px; border: none; cursor: pointer; font: 800 16px \'Bricolage Grotesque\', sans-serif; background: ' + f.ink + '; color: ' + f.color
+      });
+    });
+    var cur = data[picked];
+    return {
+      flavors: flavors,
+      current: cur,
+      bottleLabel: 'Bottle of Pulp ' + cur.name + ' juice',
+      heroCircle: 'position: absolute; width: min(540px, 100%); aspect-ratio: 1; border-radius: 50%; background: ' + cur.color + '; opacity: 0.22; transition: background .4s',
+      bottleBody: 'width: 260px; height: 380px; border-radius: 48px 48px 36px 36px; background: ' + cur.color + '; display: flex; align-items: center; justify-content: center; box-shadow: inset -24px 0 0 rgba(0,0,0,0.12), inset 18px 0 0 rgba(255,255,255,0.18); transition: background .4s'
+    };
+  }
+}
+</script>
+<script src="dc-mini.js"></script>
+<a href="index.html" class="u30-back" aria-label="Back to the Under 30 overview">← Under 30</a>
+<style>
+.u30-back{position:fixed;left:16px;bottom:16px;z-index:9999;display:inline-flex;align-items:center;min-height:44px;padding:0 18px;border-radius:999px;background:#141414;color:#f5f3ee!important;font:600 14px Inter,system-ui,sans-serif;text-decoration:none;box-shadow:0 8px 30px rgba(0,0,0,.25);border:1px solid rgba(255,255,255,.15)}
+.u30-back:hover{background:#ff5b2e;color:#141414!important}
+</style>
+</body>
+</html>

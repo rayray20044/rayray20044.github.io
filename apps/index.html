@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apps &amp; UX case studies — Rayan Alloush</title>
+    <meta name="description" content="UX/UI and frontend case studies by Rayan Alloush: a smart-locker shopping app, an in-store kids' game for Müller, a gamified nutrition app and a hospital volunteer app.">
+    <meta name="theme-color" content="#f5f3ee">
+    <meta property="og:title" content="Apps &amp; UX case studies — Rayan Alloush">
+    <meta property="og:description" content="Four app projects, from first sketch to working product.">
+    <meta property="og:image" content="https://rayray20044.github.io/Rayanalloush-portfolio/assets/srhmodularap.png">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='16' fill='%23141414'/><text x='50%' y='54%' dominant-baseline='middle' text-anchor='middle' font-family='Arial,sans-serif' font-weight='700' font-size='28' fill='%23ff5b2e'>RA</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .apps-jump { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 32px; }
+        .apps-jump a {
+            display: inline-flex; align-items: center; gap: 8px; padding: 10px 16px; border-radius: 999px;
+            background: var(--surface); border: 1px solid var(--line); text-decoration: none; font-size: 15px; font-weight: 500;
+            transition: border-color .2s, transform .2s;
+        }
+        .apps-jump a:hover { border-color: var(--accent); transform: translateY(-2px); }
+        .apps-jump span { font-family: var(--font-mono); font-size: 11px; color: var(--ink-3); }
+        .app-case { padding-top: 104px; scroll-margin-top: 72px; }
+        .app-case + .app-case { border-top: 1px solid var(--line); margin-top: 104px; }
+        .app-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 16px 32px; margin-bottom: 28px; }
+        .app-head h2 { font-size: clamp(32px, 4.4vw, 52px); letter-spacing: -0.03em; max-width: 18ch; }
+        .app-num { font-family: var(--font-display); font-weight: 700; font-size: clamp(56px, 7vw, 96px); line-height: .8; color: var(--line); letter-spacing: -0.04em; }
+        .app-case .cs-facts { margin-top: 28px; }
+        .app-case .cs-section { padding-top: 56px; }
+        .app-case .case-links { margin-top: 28px; }
+        .cs-cover .video-trigger { max-height: 640px; }
+        .process-section { padding-top: 88px; }
+        .process-section .cs-steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        @media (max-width: 560px) { .process-section .cs-steps { grid-template-columns: 1fr; } }
+        .cs-section .cs-h { font-size: clamp(24px, 2.6vw, 32px); letter-spacing: -0.03em; margin-top: 4px; }
+    </style>
+</head>
+
+<body>
+<a class="skip-link" href="#modulor">Skip to case studies</a>
+
+<nav class="nav" id="nav">
+    <div class="nav-inner container">
+        <a href="../index.html" class="brand" aria-label="Rayan Alloush — home">
+            <span class="brand-mark">RA</span>
+            <span class="brand-name">Rayan Alloush</span>
+        </a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="../index.html#work">Work</a></li>
+            <li><a href="./" class="active" aria-current="page">Apps</a></li>
+            <li><a href="../under-30/">Under 30</a></li>
+            <li><a href="../index.html#experience">Experience</a></li>
+            <li><a href="../index.html#skills">Skills</a></li>
+            <li><a href="../index.html#contact">Contact</a></li>
+        </ul>
+        <div class="nav-actions">
+            <a href="../assets/Rayan-Alloush-CV.pdf" class="btn btn-small btn-dark" download>Download CV</a>
+            <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+                <span></span><span></span>
+            </button>
+        </div>
+    </div>
+</nav>
+
+<main>
+    <header class="cs-hero container">
+        <a href="../index.html#work" class="cs-back">← Back to portfolio</a>
+        <p class="eyebrow">Apps, web &amp; UX design</p>
+        <h1>Four apps, from first sketch to working product.</h1>
+        <p class="cs-lead">
+            A retail client, a hospital, students and kids. Each project below shows the problem,
+            what I did and what came out of it, with links to the real prototypes, Figma files and code.
+        </p>
+        <nav class="apps-jump" aria-label="Jump to a case study">
+            <a href="#modulor"><span>01</span>Modulor Smart Locker</a>
+            <a href="#edurino"><span>02</span>EDURINO × Müller</a>
+            <a href="#nutrihero"><span>03</span>Nutrihero</a>
+            <a href="#volunteer"><span>04</span>Hospital Volunteer</a>
+        </nav>
+    </header>
+
+    <!-- How I work -->
+    <section class="container process-section" aria-labelledby="processTitle">
+        <div class="cs-section" style="padding-top:0">
+            <div>
+                <p class="eyebrow">How I work</p>
+                <h2 id="processTitle">The same four steps, every project.</h2>
+            </div>
+            <div class="cs-steps">
+                <div class="cs-step reveal"><span class="sg-icon" aria-hidden="true">01</span><h3>Understand</h3><p>Who uses it, where, and what gets in their way.</p></div>
+                <div class="cs-step reveal"><span class="sg-icon" aria-hidden="true">02</span><h3>Map the flow</h3><p>User flows and wireframes before any pixels.</p></div>
+                <div class="cs-step reveal"><span class="sg-icon" aria-hidden="true">03</span><h3>Prototype</h3><p>Clickable prototypes in Figma or ProtoPie to test ideas fast.</p></div>
+                <div class="cs-step reveal"><span class="sg-icon" aria-hidden="true">04</span><h3>Build</h3><p>Real interfaces in Flutter, HTML, CSS and JavaScript.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 01 Modulor -->
+    <article id="modulor" class="app-case container">
+        <div class="app-head">
+            <div>
+                <p class="case-meta">University project · Mobile app</p>
+                <h2>Modulor Smart Locker Shopping App</h2>
+            </div>
+            <span class="app-num" aria-hidden="true">01</span>
+        </div>
+        <div class="cs-cover stage stage-modulor reveal">
+            <img class="shot" style="--w: 66%; --b: -16%" src="../assets/srhmodularap.webp" alt="Three phone screens of the Modulor app: home with categories, order review and a product page" width="1100" height="837">
+        </div>
+        <ul class="cs-facts">
+            <li><span class="qf-label">My role</span><span>UI design &amp; Flutter development</span></li>
+            <li><span class="qf-label">Platform</span><span>Mobile app (Flutter)</span></li>
+            <li><span class="qf-label">Tools</span><span>Figma · Flutter · Dart</span></li>
+            <li><span class="qf-label">Special</span><span>Connected to real lockers</span></li>
+        </ul>
+        <div class="cs-section">
+            <div><p class="eyebrow">The challenge</p><h3 class="cs-h">Shopping that ends at a locker, not a counter.</h3></div>
+            <div class="cs-content">
+                <p>The brief: a complete shopping experience for students that ends at a physical smart locker instead of a shop counter. Browse supplies, add them to a cart, pay, then walk up to the locker and unlock your order with a QR code.</p>
+            </div>
+        </div>
+        <div class="cs-section">
+            <div><p class="eyebrow">What I did</p><h3 class="cs-h">Designed the flow, then built it for real.</h3></div>
+            <div class="cs-content">
+                <ul class="case-points">
+                    <li>Designed the UI and the full purchase flow in Figma, from categories to order review</li>
+                    <li>Built the app in Flutter and Dart on a working backend</li>
+                    <li>Connected the app to the real locker hardware, so a QR code actually opens the door</li>
+                </ul>
+                <div class="cs-callout"><strong>The result</strong><p>A working app, not just a mockup: the whole journey from browsing to pickup runs end to end on real lockers.</p></div>
+                <div class="case-links">
+                    <a href="https://github.com/rayray20044/srh_craft_shop1" target="_blank" rel="noopener" class="link-arrow">View code on GitHub</a>
+                    <a href="https://www.figma.com/design/4EZl0inavnkh6diNeqAtIE/Modulor-Smart-Locker-Shopping-App-DEMO?node-id=0-1&m=dev&t=LA4ffrCy0aglKOQd-1" target="_blank" rel="noopener" class="link-arrow">Open the Figma file</a>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <!-- 02 EDURINO -->
+    <article id="edurino" class="app-case container">
+        <div class="app-head">
+            <div>
+                <p class="case-meta">Client: Müller stores · 2024</p>
+                <h2>EDURINO In-Store Kids' Learning Game</h2>
+            </div>
+            <span class="app-num" aria-hidden="true">02</span>
+        </div>
+        <div class="cs-cover stage stage-edurino reveal">
+            <button class="video-trigger" id="watchVideo" aria-label="Play the EDURINO demo video">
+                <img class="shot shot-center" src="../assets/eduimg.webp" alt="EDURINO screens: character intro, a maze mini-game and a parent sign-up page" width="1400" height="652">
+                <span class="play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Watch demo · 0:44</span>
+            </button>
+        </div>
+        <ul class="cs-facts">
+            <li><span class="qf-label">Client</span><span>EDURINO × Müller stores</span></li>
+            <li><span class="qf-label">My role</span><span>Screen prototype, ad flow, demo &amp; landing page</span></li>
+            <li><span class="qf-label">Tools</span><span>Figma · ProtoPie · HTML · CSS</span></li>
+            <li><span class="qf-label">Year</span><span>2024</span></li>
+        </ul>
+        <div class="cs-section">
+            <div><p class="eyebrow">The challenge</p><h3 class="cs-h">Get kids to play, and parents to sign up.</h3></div>
+            <div class="cs-content">
+                <p>EDURINO makes educational products for children and wanted to promote them on screens inside Müller stores. The screen had two audiences: kids, who need something fun enough to stop for, and parents, who need a quick reason to sign up.</p>
+            </div>
+        </div>
+        <div class="cs-section">
+            <div><p class="eyebrow">What I did</p><h3 class="cs-h">Play first, sign-up second.</h3></div>
+            <div class="cs-content">
+                <ul class="case-points">
+                    <li>Designed the screen prototype and ad flow in Figma and ProtoPie</li>
+                    <li>Used friendly characters, mini-games and certificates to make learning feel like play</li>
+                    <li>Built a working demo and a landing page that turns parents' interest into sign-ups</li>
+                </ul>
+                <div class="cs-callout"><strong>The result</strong><p>A clickable in-store concept and landing page built to present to a real client. See it in the 44-second demo above.</p></div>
+                <div class="case-links">
+                    <a href="#" class="link-arrow" id="watchVideo2">Watch the demo video</a>
+                    <a href="https://www.figma.com/design/EyFsGDHsMFLqr67KSv1oiQ/EDURINO-%E2%80%93-Kids-Learning-Game-Prototype?node-id=0-1&m=dev&t=IkdIXlG1D6ljDL3z-1" target="_blank" rel="noopener" class="link-arrow">View the design</a>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <!-- 03 Nutrihero -->
+    <article id="nutrihero" class="app-case container">
+        <div class="app-head">
+            <div>
+                <p class="case-meta">Final project · App concept + live website</p>
+                <h2>Nutrihero: Gamified Nutrition App</h2>
+            </div>
+            <span class="app-num" aria-hidden="true">03</span>
+        </div>
+        <div class="cs-cover stage stage-nutri reveal">
+            <div class="browser" style="left: 6%; right: 38%; top: 14%"><div class="browser-bar" aria-hidden="true"><i></i><i></i><i></i></div><img src="../assets/nutrihero.webp" alt="Nutrihero landing page with a comic-book style hero" width="1600" height="867"></div>
+            <img class="shot" style="--w: 44%; --b: -8%; left: 72%" src="../assets/comicbookdemo.webp" alt="Three dark phone screens of the Nutrihero app: journeys, sign-in and a garden game" width="1100" height="796">
+        </div>
+        <ul class="cs-facts">
+            <li><span class="qf-label">Audience</span><span>Teens who struggle at school</span></li>
+            <li><span class="qf-label">My role</span><span>App design &amp; landing page development</span></li>
+            <li><span class="qf-label">Tools</span><span>Figma · ProtoPie · HTML · CSS · JS</span></li>
+            <li><span class="qf-label">Status</span><span>Landing page live</span></li>
+        </ul>
+        <div class="cs-section">
+            <div><p class="eyebrow">The challenge</p><h3 class="cs-h">Health advice teens actually want to read.</h3></div>
+            <div class="cs-content">
+                <p>Hydration and nutrition affect focus and mood, but advice about them is easy to ignore, especially for teenagers who already find school hard. The idea: turn healthy habits into a game with a comic-book world.</p>
+            </div>
+        </div>
+        <div class="cs-section">
+            <div><p class="eyebrow">What I did</p><h3 class="cs-h">A comic world with daily goals.</h3></div>
+            <div class="cs-content">
+                <ul class="case-points">
+                    <li>Designed the app in Figma and prototyped it in ProtoPie</li>
+                    <li>Created the game mechanics: daily challenges, journeys and a garden that grows with good habits</li>
+                    <li>Coded and launched the marketing landing page in HTML, CSS and JavaScript</li>
+                </ul>
+                <div class="cs-callout"><strong>The result</strong><p>A complete app concept and a live website you can visit today.</p></div>
+                <div class="case-links">
+                    <a href="https://rayray20044.github.io/comicapp-landingpage/#" target="_blank" rel="noopener" class="link-arrow">Visit the live website</a>
+                    <a href="https://www.figma.com/design/2maNGQBLMQociNPvhxImgU/comic-app-demo?node-id=0-1&m=dev&t=slIUgeJw5R8VKYdd-1" target="_blank" rel="noopener" class="link-arrow">App design in Figma</a>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <!-- 04 Volunteer -->
+    <article id="volunteer" class="app-case container">
+        <div class="app-head">
+            <div>
+                <p class="case-meta">Exchange program, Shanghai · 2025 · Team project</p>
+                <h2>Hospital Volunteer App</h2>
+            </div>
+            <span class="app-num" aria-hidden="true">04</span>
+        </div>
+        <div class="cs-cover stage stage-shanghai reveal">
+            <img class="shot" style="--w: 70%; --b: -16%" src="../assets/shanghai-app.webp" alt="Three phone screens of a Chinese-language hospital volunteer app with a sunflower theme" width="1200" height="900">
+        </div>
+        <ul class="cs-facts">
+            <li><span class="qf-label">Context</span><span>Exchange program in Shanghai</span></li>
+            <li><span class="qf-label">My role</span><span>Interactive prototype in ProtoPie</span></li>
+            <li><span class="qf-label">Tools</span><span>ProtoPie · Figma</span></li>
+            <li><span class="qf-label">Audience</span><span>Chinese-speaking hospitals &amp; volunteers</span></li>
+        </ul>
+        <div class="cs-section">
+            <div><p class="eyebrow">The challenge</p><h3 class="cs-h">Organising volunteers, and keeping patients company.</h3></div>
+            <div class="cs-content">
+                <p>Hospitals rely on volunteers but struggle to organise them, and many elderly patients spend long days alone. Our international team set out to design an app that solves both problems at once, for a Chinese-speaking audience.</p>
+            </div>
+        </div>
+        <div class="cs-section">
+            <div><p class="eyebrow">What I did</p><h3 class="cs-h">“Adopt a Grandparent”.</h3></div>
+            <div class="cs-content">
+                <ul class="case-points">
+                    <li>Built the interactive prototype in ProtoPie so the team could test the full flow</li>
+                    <li>Prototyped the team's standout feature, “Adopt a Grandparent”, which pairs volunteers with elderly patients</li>
+                    <li>Designed for a language and culture different from my own, working closely with the team</li>
+                </ul>
+                <div class="cs-callout"><strong>The result</strong><p>A clickable prototype you can try yourself, and lots of practice designing across languages and cultures.</p></div>
+                <div class="case-links">
+                    <a href="https://cloud.protopie.io/p/9296a58385120fe0f2a667f3" target="_blank" rel="noopener" class="link-arrow">Try the prototype</a>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <section class="cs-next container">
+        <a href="../under-30/" class="cs-next-card">
+            <div>
+                <p class="eyebrow">Next</p>
+                <h2>Under 30: seven websites, 30 minutes each</h2>
+            </div>
+            <span class="cs-next-arrow" aria-hidden="true">→</span>
+        </a>
+    </section>
+</main>
+
+<footer class="footer">
+    <div class="container footer-inner">
+        <p>© <span id="year">2026</span> Rayan Alloush · Berlin, Germany</p>
+        <a href="../index.html">Back to portfolio ↑</a>
+    </div>
+</footer>
+
+<dialog class="video-dialog" id="videoModal" aria-label="EDURINO demo video">
+    <button class="dialog-close" id="closeVideo" aria-label="Close video">×</button>
+    <video id="projectVideo" controls playsinline preload="none" poster="../assets/edurino-poster.jpg">
+        <source src="../assets/edurino-demo-web.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</dialog>
+
+<script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const nav = document.getElementById('nav');
+    const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 10);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    const menuBtn = document.getElementById('menuBtn');
+    const navLinks = document.getElementById('navLinks');
+    menuBtn.addEventListener('click', () => {
+        const open = navLinks.classList.toggle('open');
+        menuBtn.classList.toggle('open', open);
+        menuBtn.setAttribute('aria-expanded', open);
+    });
+
+    const io = new IntersectionObserver(entries => {
+        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+    const modal = document.getElementById('videoModal');
+    const video = document.getElementById('projectVideo');
+    const openVideo = e => { e.preventDefault(); modal.showModal(); video.play().catch(() => {}); };
+    document.getElementById('watchVideo').addEventListener('click', openVideo);
+    document.getElementById('watchVideo2').addEventListener('click', openVideo);
+    document.getElementById('closeVideo').addEventListener('click', () => modal.close());
+    modal.addEventListener('click', e => { if (e.target === modal) modal.close(); });
+    modal.addEventListener('close', () => video.pause());
+</script>
+</body>
+</html>

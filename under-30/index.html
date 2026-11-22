@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Under 30 — Rayan Alloush</title>
+<meta name="description" content="Under 30 — seven web design concepts by Rayan Alloush, each designed in under 30 minutes.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&amp;family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@700&amp;family=Inter+Tight:wght@700&amp;family=Chakra+Petch:wght@700&amp;family=Unbounded:wght@800&amp;family=Fraunces:ital,opsz,wght@1,9..144,600&amp;family=Anton&amp;display=swap">
+<style>
+body{margin:0;background:#f5f3ee}
+a{color:#141414}a:hover{color:#C2380F}
+*{box-sizing:border-box}
+@keyframes u30-ring{from{stroke-dashoffset:0}to{stroke-dashoffset:754}}
+@keyframes u30-blink{0%,100%{opacity:1}50%{opacity:.3}}
+@keyframes u30-pulse{0%{box-shadow:0 0 0 0 rgba(31,163,92,.5)}70%{box-shadow:0 0 0 8px rgba(31,163,92,0)}100%{box-shadow:0 0 0 0 rgba(31,163,92,0)}}
+.u30-ring{stroke-dasharray:754;animation:u30-ring 30s linear infinite}
+.u30-blink{animation:u30-blink 1s steps(2) infinite}
+.u30-dot{animation:u30-pulse 2.2s infinite}
+.u30-card{transition:transform .3s cubic-bezier(.2,.7,.2,1), box-shadow .3s}
+.u30-card:hover{transform:translateY(-4px);box-shadow:0 30px 60px -20px rgba(20,20,20,.25)}
+.u30-nav a{transition:background .2s,color .2s}
+.u30-nav a:hover{background:#ece9e1;color:#141414}
+.u30-btn{transition:transform .2s, background .2s}
+.u30-btn:hover{transform:translateY(-2px)}
+.u30-pill{transition:background .2s, transform .2s}
+.u30-pill:hover{background:#ff5b2e;border-color:#ff5b2e;color:#141414;transform:translateY(-2px)}
+@media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div id="dc-root"></div>
+<script type="text/x-dc-template" id="dc-template">
+<div style="font-family: Inter, system-ui, sans-serif; font-size: 17px; line-height: 1.6; background: #f5f3ee; color: #141414; width: 100%; overflow: hidden">
+
+  <header style="border-bottom: 1px solid #dedad0">
+    <div style="max-width: 1180px; margin: 0 auto; padding: 0 24px; min-height: 68px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px">
+      <a href="#top" style="display: flex; align-items: center; gap: 10px; text-decoration: none; font-weight: 600">
+        <span style="width: 34px; height: 34px; border-radius: 10px; display: flex; align-items: center; justify-content: center; background: #141414; color: #ff5b2e; font-family: 'Bricolage Grotesque', sans-serif; font-size: 14px; font-weight: 700">RA</span>
+        <span style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 18px; letter-spacing: -0.01em">Rayan Alloush</span>
+      </a>
+      <nav class="u30-nav" aria-label="Main" style="display: flex; flex-wrap: wrap; gap: 4px">
+        <a href="#work" style="padding: 8px 14px; border-radius: 999px; text-decoration: none; font-size: 15px; font-weight: 500; color: #4a4a48">Concepts</a>
+        <a href="#rules" style="padding: 8px 14px; border-radius: 999px; text-decoration: none; font-size: 15px; font-weight: 500; color: #4a4a48">Rules</a>
+        <a href="#learned" style="padding: 8px 14px; border-radius: 999px; text-decoration: none; font-size: 15px; font-weight: 500; color: #4a4a48">Takeaways</a>
+      </nav>
+      <a class="u30-btn" href="#contact" style="padding: 9px 16px; border-radius: 999px; background: #141414; color: #f5f3ee; text-decoration: none; font-weight: 600; font-size: 14px">Get in touch</a>
+    </div>
+  </header>
+
+  <section id="top" style="max-width: 1180px; margin: 0 auto; padding: 72px 24px 56px; display: flex; flex-wrap: wrap; align-items: center; gap: 48px">
+    <div style="flex: 1 1 560px; min-width: 0; display: flex; flex-direction: column">
+      <p style="align-self: flex-start; margin: 0 0 28px; display: inline-flex; align-items: center; gap: 10px; padding: 7px 14px 7px 12px; border-radius: 999px; background: #ffffff; border: 1px solid #dedad0; font-size: 14px; font-weight: 500; color: #4a4a48">
+        <span class="u30-dot" aria-hidden="true" style="width: 8px; height: 8px; border-radius: 50%; background: #1fa35c"></span>
+        Design challenge · 7 briefs · 30 minutes each
+      </p>
+      <h1 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-size: clamp(44px, 6.4vw, 84px); font-weight: 600; line-height: 1.02; letter-spacing: -0.035em; max-width: 14ch">Seven web ideas, designed in <em style="font-style: normal; color: #C2380F; background: linear-gradient(transparent 70%, rgba(255,91,46,0.18) 70%)">under thirty.</em></h1>
+      <p style="margin: 24px 0 0; font-size: 18px; color: #4a4a48; max-width: 54ch">A rapid concept challenge: pick a brief, start the timer, and ship a working landing page before it rings. A juice brand, a developer tool, an architecture studio, an electric car, a space-travel company, a coffee roaster and a racing team.</p>
+      <p style="margin: 14px 0 0; font-size: 16px; color: #7a7873; max-width: 54ch">I used AI as a design partner to move fast. My part was choosing the briefs, setting the art direction and deciding what stayed, what changed and what got cut.</p>
+      <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px">
+        <a class="u30-btn" href="#work" style="display: inline-flex; align-items: center; gap: .5em; padding: 14px 22px; border-radius: 999px; background: #141414; color: #f5f3ee; text-decoration: none; font-weight: 600; font-size: 15px">See the concepts →</a>
+        <a class="u30-btn" href="#rules" style="display: inline-flex; align-items: center; padding: 14px 22px; border-radius: 999px; border: 1.5px solid #141414; text-decoration: none; font-weight: 600; font-size: 15px">How it worked</a>
+      </div>
+      <ul style="margin: 44px 0 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid #dedad0">
+        <li style="padding: 16px 16px 0 0; display: flex; flex-direction: column; gap: 4px; font-size: 14px; font-weight: 500"><span style="font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace; font-size: 11px; text-transform: uppercase; letter-spacing: .08em; color: #6b6964">Concepts</span>7 landing pages</li>
+        <li style="padding: 16px 16px 0; border-left: 1px solid #dedad0; display: flex; flex-direction: column; gap: 4px; font-size: 14px; font-weight: 500"><span style="font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace; font-size: 11px; text-transform: uppercase; letter-spacing: .08em; color: #6b6964">Timebox</span>≤ 30 min each</li>
+        <li style="padding: 16px 0 0 16px; border-left: 1px solid #dedad0; display: flex; flex-direction: column; gap: 4px; font-size: 14px; font-weight: 500"><span style="font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace; font-size: 11px; text-transform: uppercase; letter-spacing: .08em; color: #6b6964">Interactive</span>5 of 7</li>
+      </ul>
+    </div>
+    <div style="flex: 0 1 360px; min-width: 0; display: flex; justify-content: center">
+      <div style="position: relative; width: 320px; max-width: 100%; aspect-ratio: 1; border-radius: 32px; background: #ffffff; border: 1px solid #dedad0; box-shadow: 0 1px 2px rgba(20,20,20,.04), 0 8px 30px rgba(20,20,20,.06); display: flex; align-items: center; justify-content: center">
+        <div role="img" aria-label="A 30-minute timer counting down" style="position: relative; width: 250px; height: 250px">
+          <svg viewBox="0 0 280 280" width="250" height="250" aria-hidden="true">
+            <circle cx="140" cy="140" r="120" fill="none" stroke="#ece9e1" stroke-width="16"></circle>
+            <circle class="u30-ring" cx="140" cy="140" r="120" fill="none" stroke="#ff5b2e" stroke-width="16" stroke-linecap="round" transform="rotate(-90 140 140)"></circle>
+          </svg>
+          <div style="position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px">
+            <span style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 58px; font-weight: 600; letter-spacing: -2px; line-height: 1">30<span class="u30-blink">:</span>00</span>
+            <span style="font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace; font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: #6b6964">per concept</span>
+          </div>
+        </div>
+        <span style="position: absolute; top: -14px; right: -14px; padding: 8px 14px; border-radius: 999px; background: #141414; color: #ff5b2e; font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace; font-size: 12px; letter-spacing: .06em; text-transform: uppercase; transform: rotate(6deg)">No overtime</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="rules" style="background: #ffffff; border-top: 1px solid #dedad0; border-bottom: 1px solid #dedad0">
+    <div style="max-width: 1180px; margin: 0 auto; padding: 96px 24px; display: flex; flex-direction: column; gap: 48px">
+      <div style="max-width: 640px">
+        <p style="margin: 0 0 14px; font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace; font-size: 12px; text-transform: uppercase; letter-spacing: .1em; color: #C2380F">01 — The rules</p>
+        <h2 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-size: clamp(32px, 4.4vw, 52px); font-weight: 600; line-height: 1.08; letter-spacing: -0.03em">Three rules, no exceptions.</h2>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px">
+        <sc-for list="{{rules}}" as="r" hint-placeholder-count="3">
+          <div style="padding: 32px; border-radius: 22px; background: #f5f3ee; border: 1px solid #dedad0; display: flex; flex-direction: column; gap: 14px">
+            <span style="width: 38px; height: 38px; border-radius: 11px; display: flex; align-items: center; justify-content: center; background: #141414; color: #ff5b2e; font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace; font-size: 15px; font-weight: 700">{{r.n}}</span>
+            <h3 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-size: 22px; font-weight: 600; letter-spacing: -0.015em">{{r.title}}</h3>
+            <p style="margin: 0; font-size: 16px; color: #4a4a48">{{r.body}}</p>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section id="work" style="max-width: 1180px; margin: 0 auto; padding: 112px 24px; display: flex; flex-direction: column; gap: 40px">
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 24px">
+      <div style="max-width: 640px">
+        <p style="margin: 0 0 14px; font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace; font-size: 12px; text-transform: uppercase; letter-spacing: .1em; color: #C2380F">02 — The concepts</p>
+        <h2 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-size: clamp(32px, 4.4vw, 52px); font-weight: 600; line-height: 1.08; letter-spacing: -0.03em">Seven briefs, seven looks.</h2>
+      </div>
+      <div role="group" aria-label="Filter concepts" style="display: flex; flex-wrap: wrap; gap: 8px">
+        <sc-for list="{{filters}}" as="f" hint-placeholder-count="5">
+          <button onClick="{{f.pick}}" aria-pressed="{{f.pressed}}" style="{{f.style}}">{{f.label}}</button>
+        </sc-for>
+      </div>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(min(340px, 100%), 1fr)); gap: 20px">
+      <sc-for list="{{shown}}" as="c" hint-placeholder-count="7">
+        <a href="{{c.href}}" class="u30-card" style="display: flex; flex-direction: column; text-decoration: none; color: #141414; background: #ffffff; border: 1px solid #dedad0; border-radius: 28px; padding: 14px; box-shadow: 0 1px 2px rgba(20,20,20,.04), 0 8px 30px rgba(20,20,20,.06)">
+          <div style="{{c.preview}}">
+            <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px">
+              <span style="{{c.chip}}">{{c.brand}}</span>
+              <span style="display: flex; gap: 5px" aria-hidden="true">
+                <sc-for list="{{c.swatches}}" as="s" hint-placeholder-count="4">
+                  <span style="{{s.style}}"></span>
+                </sc-for>
+              </span>
+            </div>
+            <span style="{{c.sample}}">{{c.headline}}</span>
+          </div>
+          <div style="padding: 20px 10px 8px; display: flex; flex-direction: column; gap: 10px; flex: 1">
+            <p style="margin: 0; font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace; font-size: 12px; text-transform: uppercase; letter-spacing: .07em; color: #6b6964">{{c.meta}}</p>
+            <h3 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-size: 26px; font-weight: 600; letter-spacing: -0.02em; line-height: 1.08">{{c.title}}</h3>
+            <p style="margin: 0; font-size: 15px; line-height: 1.55; color: #4a4a48">{{c.desc}}</p>
+            <ul style="margin: auto 0 0; padding: 12px 0 0; list-style: none; display: flex; flex-wrap: wrap; gap: 8px">
+              <sc-for list="{{c.tags}}" as="t" hint-placeholder-count="2">
+                <li style="padding: 5px 12px; border-radius: 999px; background: #ece9e1; color: #4a4a48; font-size: 13px; font-weight: 500">{{t}}</li>
+              </sc-for>
+            </ul>
+            <span style="margin-top: 8px; padding-top: 16px; border-top: 1px solid #dedad0; font-weight: 600; font-size: 15px">View concept →</span>
+          </div>
+        </a>
+      </sc-for>
+    </div>
+  </section>
+
+  <section id="learned" style="background: #ffffff; border-top: 1px solid #dedad0; border-bottom: 1px solid #dedad0">
+    <div style="max-width: 1180px; margin: 0 auto; padding: 96px 24px; display: flex; flex-wrap: wrap; gap: 64px; align-items: flex-start">
+      <div style="flex: 1 1 340px; min-width: 0">
+        <p style="margin: 0 0 14px; font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace; font-size: 12px; text-transform: uppercase; letter-spacing: .1em; color: #C2380F">03 — Takeaways</p>
+        <h2 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-size: clamp(32px, 4.4vw, 52px); font-weight: 600; line-height: 1.08; letter-spacing: -0.03em">What thirty minutes taught me.</h2>
+      </div>
+      <ol style="flex: 1 1 520px; min-width: 0; margin: 0; padding: 0; list-style: none">
+        <li style="display: grid; grid-template-columns: 56px 1fr; gap: 16px; padding: 24px 0; border-bottom: 1px solid #dedad0"><span style="font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace; font-size: 13px; color: #6b6964; padding-top: 3px">01</span><span style="font-size: 18px">[Lesson 1 — e.g. why picking one strong color early saves the most time]</span></li>
+        <li style="display: grid; grid-template-columns: 56px 1fr; gap: 16px; padding: 24px 0; border-bottom: 1px solid #dedad0"><span style="font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace; font-size: 13px; color: #6b6964; padding-top: 3px">02</span><span style="font-size: 18px">[Lesson 2 — e.g. which concept was hardest, and what you'd change with more time]</span></li>
+        <li style="display: grid; grid-template-columns: 56px 1fr; gap: 16px; padding: 24px 0; border-bottom: 1px solid #dedad0"><span style="font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace; font-size: 13px; color: #6b6964; padding-top: 3px">03</span><span style="font-size: 18px">[Lesson 3 — e.g. how you'd rebuild your favorite one from scratch]</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <footer id="contact" style="background: #141414; color: #f3f1ec">
+    <div style="max-width: 1180px; margin: 0 auto; padding: 120px 24px 56px; display: flex; flex-direction: column; align-items: center; text-align: center">
+      <p style="margin: 0 0 14px; font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace; font-size: 12px; text-transform: uppercase; letter-spacing: .1em; color: #ff8a66">Contact</p>
+      <h2 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-size: clamp(38px, 6.4vw, 80px); font-weight: 600; line-height: 1.04; letter-spacing: -0.04em">Got 30 minutes? <span style="color: #ff6a40">Let's talk.</span></h2>
+      <p style="margin: 20px auto 0; max-width: 48ch; color: #b9b6ae; font-size: 18px">Open to UX/UI and frontend internships in Berlin and remote.</p>
+      <a href="mailto:alloushrayan3@gmail.com" style="margin-top: 44px; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 600; font-size: clamp(22px, 3.4vw, 38px); letter-spacing: -0.02em; text-decoration: none; color: #ffffff; border-bottom: 2px solid #ff6a40; padding-bottom: 2px; overflow-wrap: anywhere">alloushrayan3@gmail.com</a>
+      <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; margin-top: 40px">
+        <a class="u30-pill" href="https://linkedin.com/in/rayan-alloush" style="padding: 12px 22px; border-radius: 999px; background: #222220; border: 1px solid #333230; color: #f3f1ec; text-decoration: none; font-weight: 600; font-size: 15px">LinkedIn</a>
+        <a class="u30-pill" href="https://github.com/rayray20044" style="padding: 12px 22px; border-radius: 999px; background: #222220; border: 1px solid #333230; color: #f3f1ec; text-decoration: none; font-weight: 600; font-size: 15px">GitHub</a>
+        <a class="u30-pill" href="../index.html" style="padding: 12px 22px; border-radius: 999px; background: #222220; border: 1px solid #333230; color: #f3f1ec; text-decoration: none; font-weight: 600; font-size: 15px">Back to portfolio</a>
+      </div>
+      <div style="width: 100%; margin-top: 88px; padding-top: 24px; border-top: 1px solid #2e2d2a; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; font-size: 14px; color: #8f8c85">
+        <span>© Rayan Alloush · Berlin</span>
+        <span>All brands shown are fictional concepts.</span>
+      </div>
+    </div>
+  </footer>
+</div>
+</script>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { filter: 'All' };
+  }
+  renderVals() {
+    var self = this;
+    var C = [
+      { href: 'pulp.html', brand: 'pulp.', title: 'Pulp', meta: 'Juice brand · E-commerce', desc: 'A loud, happy juice brand. Pick a flavor and the bottle changes color.', bg: '#0E3B2E', ink: '#FFF3E0', accent: '#FF7A1A', chipInk: '#0E3B2E', font: "'Bricolage Grotesque', sans-serif", weight: 800, upper: false, italic: false, headline: 'Squeezed this morning.', sw: ['#FF7A1A', '#7BC043', '#C2185B', '#FFC629'], tags: ['Interactive', 'Flavor switcher'], groups: ['Interactive', 'Dark'] },
+      { href: 'relay.html', brand: 'relay', title: 'Relay', meta: 'Developer tool · SaaS', desc: 'A dark, developer-first product page with a live-looking event log and pricing.', bg: '#0B0D10', ink: '#E6E8EB', accent: '#C6FF3D', chipInk: '#0B0D10', font: "'Space Grotesk', sans-serif", weight: 700, upper: false, italic: false, headline: 'Every webhook delivered.', sw: ['#C6FF3D', '#12161B', '#9BA3AF', '#E6E8EB'], tags: ['SaaS', 'Dark UI'], groups: ['Dark'] },
+      { href: 'northfield.html', brand: 'Northfield', title: 'Northfield', meta: 'Architecture studio', desc: 'A calm Swiss-style studio site with a building drawn entirely in code.', bg: '#F2F0EB', ink: '#111111', accent: '#111111', chipInk: '#F2F0EB', font: "'Inter Tight', sans-serif", weight: 700, upper: false, italic: false, headline: 'Quiet buildings.', sw: ['#111111', '#E03A10', '#DCD7CC', '#8F8A80'], tags: ['Minimal', 'Grid'], groups: ['Light'] },
+      { href: 'volta.html', brand: 'VOLTA', title: 'Volta Ø1', meta: 'Electric car launch', desc: 'A neon outline that draws itself, spinning wheels and a paint picker that recolors the car.', bg: '#050607', ink: '#E9F7FA', accent: '#3DF2FF', chipInk: '#050607', font: "'Chakra Petch', sans-serif", weight: 700, upper: true, italic: false, headline: 'Volta Ø1', sw: ['#3DF2FF', '#FF5A1F', '#D8E3E6', '#6B3DF2'], tags: ['Animated', 'Configurator'], groups: ['Animated', 'Interactive', 'Dark'] },
+      { href: 'orbital.html', brand: 'ORBITAL', title: 'Orbital', meta: 'Space travel', desc: 'Twinkling stars, an orbiting station and a live countdown to the first launch.', bg: '#05060F', ink: '#EDEFF7', accent: '#FF8A3D', chipInk: '#05060F', font: "'Unbounded', sans-serif", weight: 800, upper: false, italic: false, headline: '400 km up.', sw: ['#FF8A3D', '#2C5BD6', '#0E1C4A', '#EDEFF7'], tags: ['Animated', 'Live timer'], groups: ['Animated', 'Interactive', 'Dark'] },
+      { href: 'hearth-and-bean.html', brand: 'Hearth & Bean', title: 'Hearth & Bean', meta: 'Coffee roaster · Seasonal', desc: 'A cozy Christmas coffee shop with falling snow and a 12-day advent box you can open.', bg: '#1F4D3A', ink: '#FBF3E6', accent: '#F4C66A', chipInk: '#1F2A1F', font: "'Fraunces', serif", weight: 600, upper: false, italic: true, headline: 'Christmas, freshly roasted.', sw: ['#B23A3A', '#F4C66A', '#FBF3E6', '#8A5A3B'], tags: ['Seasonal', 'Animated'], groups: ['Animated', 'Interactive', 'Dark'] },
+      { href: 'apex-77.html', brand: 'APEX 77', title: 'APEX 77 Racing', meta: 'Racing team · Merch store', desc: 'A racing team site where every livery repaints the whole page, merch included.', bg: '#0A0A0F', ink: '#FFFFFF', accent: '#FF2E88', chipInk: '#0A0A0F', font: 'Anton, sans-serif', weight: 400, upper: true, italic: false, headline: 'Built for the last lap.', sw: ['#FF2E88', '#FFE600', '#00D1FF', '#B6FF00'], tags: ['Merch store', 'Animated'], groups: ['Animated', 'Interactive', 'Dark'] }
+    ];
+    var f = this.state.filter;
+    var labels = ['All', 'Interactive', 'Animated', 'Dark', 'Light'];
+    var filters = labels.map(function (l) {
+      var on = l === f;
+      return {
+        label: l,
+        pressed: on ? 'true' : 'false',
+        pick: function () { self.setState({ filter: l }); },
+        style: 'min-height: 44px; padding: 0 18px; border-radius: 999px; cursor: pointer; font: 500 15px Inter, sans-serif; border: 1.5px solid ' + (on ? '#141414' : '#dedad0') + '; background: ' + (on ? '#141414' : '#ffffff') + '; color: ' + (on ? '#f5f3ee' : '#4a4a48') + '; transition: background .2s, color .2s'
+      };
+    });
+    var shown = C.filter(function (c) { return f === 'All' || c.groups.indexOf(f) !== -1; }).map(function (c) {
+      var idx = C.indexOf(c) + 1;
+      return Object.assign({}, c, {
+        meta: '0' + idx + ' · ' + c.meta,
+        preview: 'aspect-ratio: 4 / 3; max-height: 240px; border-radius: 20px; padding: 22px; display: flex; flex-direction: column; justify-content: space-between; background: ' + c.bg + '; color: ' + c.ink + (c.bg === '#F2F0EB' ? '; border: 1px solid #dedad0' : ''),
+        chip: 'padding: 5px 12px; border-radius: 999px; font: 600 13px Inter, sans-serif; letter-spacing: .02em; background: ' + c.accent + '; color: ' + c.chipInk,
+        sample: 'font-family: ' + c.font + '; font-weight: ' + c.weight + '; font-style: ' + (c.italic ? 'italic' : 'normal') + '; text-transform: ' + (c.upper ? 'uppercase' : 'none') + '; font-size: 42px; line-height: 0.98; letter-spacing: -0.02em; color: ' + c.ink,
+        swatches: c.sw.map(function (s) { return { style: 'width: 16px; height: 16px; border-radius: 50%; border: 2px solid ' + c.ink + '; background: ' + s }; })
+      });
+    });
+    return {
+      filters: filters,
+      shown: shown,
+      rules: [
+        { n: '01', title: 'Timer on, no excuses', body: 'From blank brief to finished landing page in under 30 minutes. No going back to polish later.' },
+        { n: '02', title: 'A new look every time', body: 'Each concept gets its own fonts, colors and mood — nothing reused from the round before.' },
+        { n: '03', title: 'It has to really work', body: 'Real buttons, readable contrast and layouts that hold up on a phone. Interaction wherever it adds something.' }
+      ]
+    };
+  }
+}
+</script>
+<script src="dc-mini.js"></script>
+</body>
+</html>
